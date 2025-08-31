@@ -219,24 +219,158 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 
 
 
+## Fitting model to real-world data
+
+<br>
+
+![](plot/figure-1.png){fig-align="center" width=70% height=70%}
 
 
 
+## Population and samples
+
+- 
+
+  - **Population**
+  
+    - The collection of units (be they people, plankton, plants, cities, suicidal authors, etc.) to which we want to generalize a set of findings or a statistical model
+
+  - **Sample**
+  
+    - A smaller (but hopefully representative) collection of units from a population used to determine truths about that population
 
 
 
+## A simple statistical model
+
+<br>
+
+$$
+outcome_i = (model) + error_i
+$$
+<br>
+
+-
+
+  - In statistics we fit models to our data (i.e. we use a statistical model to represent what is happening in the real world).
+  - The mean is a hypothetical value (i.e. it doesn’t have to be a value that actually exists in the data set).
+  - As such, the mean is simple statistical model.
 
 
 
+## The Mean
+
+<br>
+
+$$
+\text{mean} (\bar{X}) = \frac{\Sigma^n_{i=1} x_i}{n}
+$$
+
+<br>
+
+- 
+
+  - The mean is the sum of all scores divided by the number of scores.
+  - The mean is also the value from which the (squared) scores deviate least (it has the least error).
+  
+  
+  
+## The Mean: example
+
+<br>
+
+  - Collect some data
+
+$$
+1, 3, 4, 3, 2
+$$
+    
+  - Add them up
+  
+$$ 
+\Sigma^n_{i=1}x_i = 1 + 3 + 4 + 3 + 2 = 13 
+$$
+
+  - Divide by the number of scores, $n$:
+  
+$$
+\bar{x} = \frac{\Sigma^n_{i=1}x_i}{n} = \frac{13}{5} = 2.6
+$$
 
 
 
+## The Mean as a model
+
+<br>
+
+$$
+outcome_i = (model) + error_i
+$$
+
+
+$$
+outcome_{lecture1} = (\bar{x}) + error_{lecture1}
+$$
+
+$$
+1 = 2.6 + error_{lecture1}
+$$
 
 
 
+## Measuring the 'fit' of a model
+
+<br>
+
+- 
+
+  - The mean is a model of what happens in the real world: the typical score.
+  
+  - It is not a perfect representation of the data.
+  
+  - How can we assess how well the mean represents reality?
 
 
 
+## A Perfect Fit
+
+<br>
+
+![](plot/perfect_fit.jpeg){fig-align="center" width="70%" height="70%"}
+
+
+
+## Calculating error
+
+-
+
+  - A deviation is the difference between the mean and an actual data point.
+  - Deviations can be calculated by taking each score and subtracting the mean from it:
+  
+$$
+\text{deviation} = x_i - \bar{x}
+$$
+
+## Calculating error
+
+![](plot/n_friends.jpeg){fig-align="center" width=65% heigh=65%}
+
+
+
+## Use the total error?
+
+<br>
+
+- 
+
+  - We could just take the error between the mean and the data and add them.
+  
+$$
+\Sigma(x_i - \bar{x} = 0)
+$$
+
+
+![](plot/table-2.png){fig-align="center" width=60% height=60%}
 
 
 
