@@ -1,0 +1,253 @@
+---
+title: ". "
+title-slide-attributes:
+  data-background-image: "plot/module-1.png"
+  data-background-size: "cover"
+format: 
+  revealjs:
+    theme: [simple, custom.scss]
+    preview-links: true
+    code-fold: false
+    code-summary: "code"
+    chalkboard: true
+    slide-number: true
+    footer: "Econ 115a: Econometrics"
+    quiz:
+      defaultCorrect: "Correct!"
+      defaultIncorrect: "Incorrect!"
+revealjs-plugins:
+  - quiz
+engine: knitr
+from: markdown+emoji
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| include: false
+knitr::opts_chunk$set(comment = "", 
+                      collapse = TRUE,
+                      fig.align = "center",
+                      fig.width = 8,
+                      fig.height = 7
+                      )
+
+## working directory
+setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
+
+## Libraries
+library(tidyverse)
+library(glue)
+library(patchwork)
+library(kableExtra)
+
+
+
+# setting the theme
+theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
+
+```
+
+## Lessons
+
+-   Research process
+-   Types of data analysis
+-   Generating and testing theories
+-   Levels of measurement
+-   Validity and reliability
+-   Central tendency
+-   Type of hypotheses
+
+## The research process
+
+<br>
+
+![](plot/research-process.png){fig-align="center" width="60%" height="60%"}
+
+## Types of data analysis
+
+<br>
+
+-   **Quantitative Methods**
+    -   Testing theories using numbers
+-   **Qualitative Methods**
+    -   Testing theories using language
+        -   Magazine articles/Interviews
+        -   Conversations
+        -   Newspapers
+        -   Media broadcasts
+
+## Initial observation
+
+-   Find something that needs explaining
+
+    -   Observe the real world
+    -   Read other research
+
+-   Test the concept: collect data
+
+    -   Collect data to see whether your hunch is correct
+    -   To do this you need to define variables
+        -   Anything that can be measured and can differ across entities or time.
+
+## The research process
+
+<br>
+
+![](plot/research-process-1.png){fig-align="center" width="60%" height="60%"}
+
+## Generating and testing theories
+
+-
+  -   **Theory**
+      -   A hypothesized general principle or set of principles that explains known findings about a topic and from which new hypotheses can be generated.
+  -   **Hypothesis**
+      -   A prediction from a theory.
+      -   e.g. the number of people turning up for a Big Brother audition that have narcissistic personality disorder will be higher than the general level (1%) in the population.
+  -   **Falsification**
+      -   The act of disproving a theory or hypothesis.
+
+## Generating and testing theories
+
+-   A table of the number of people at the Big Brother audition split by whether they had narcissistic personality disorder and whether they were selected as contestants by the producers.
+
+![](plot/table-1.png){fig-align="center" width="60%" height="60%"}
+
+## The research process
+
+<br>
+
+![](plot/research-process-2.png){fig-align="center" width="60%" height="60%"}
+
+## Data collection1: What to measure?
+
+<br>
+
++---------------------------+--------------------------------------------------+-----------------------------------------------+
+| Hypothesis                | Independent variable                             | Dependent variable                            |
++===========================+==================================================+===============================================+
+| -   coca-cola kills sperm | -   The proposed cause                           | -   The proposed effect                       |
+|                           | -   A predictor variable                         | -   An outcome variable                       |
+|                           | -   A manipulated variable (in experiments) Coca | -   Measured not manipulated (in experiments) |
+|                           | -   Cola in the hypothesis above                 | -   Sperm in the hypothesis above             |
++---------------------------+--------------------------------------------------+-----------------------------------------------+
+
+## Levels of measurement {.small-text-table}
+
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| Categorical                                                                             | Continuous                                                                                                                  |
++=========================================================================================+=============================================================================================================================+
+| -   **Binary variable**                                                                 | -   **Interval variable**                                                                                                   |
+|     -   There are only two categories                                                   |     -   Equal intervals on the variable represent equal differences in the property being measured                          |
+|     -   e.g. dead or alive.                                                             |     -   e.g. the difference between 6 and 8 is equivalent to the difference between 13 and 15.                              |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| -   **Nominal variable**                                                                | -   **Ratio variable**                                                                                                      |
+|                                                                                         |     -   The same as an interval variable, but the ratios of scores on the scale must also make sense                        |
+|     -   There are more than two categories                                              |     -   e.g. a score of 16 on an anxiety scale means that the person is, in reality, twice as anxious as someone scoring 8. |
+|                                                                                         |                                                                                                                             |
+|     -   e.g. whether someone is an omnivore, vegetarian, vegan, or fruitarian.          |                                                                                                                             |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| -   **Ordinal variable**                                                                |                                                                                                                             |
+|     -   The same as a nominal variable but the categories have a logical order          |                                                                                                                             |
+|     -   e.g. whether people got a fail, a pass, a merit or a distinction in their exam. |                                                                                                                             |
++-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
+
+## Measurement error
+
+- 
+
+  - The discrepancy between the actual value we’re trying to measure, and the number we use to represent that value.
+  - Example:
+    - You (in reality) weigh 80 kg.
+    - You stand on your bathroom scales and they say 83 kg.
+    - The measurement error is 3 kg.
+    
+    
+
+## Validity
+
+<br>
+
+-
+
+  - Whether an instrument measures what it set out to measure.
+
+  - **Content validity**
+    - Evidence that the content of a test corresponds to the content of the construct it was designed to cover
+
+  - **Ecological validity**
+    - Evidence that the results of a study, experiment or test can be applied, and allow inferences, to real-world conditions.
+    
+    
+    
+## Reliability
+
+<br>
+
+-
+
+  - **Reliability**
+    - The ability of the measure to produce the same results under the same conditions.
+
+  - **Test–Retest Reliability**
+    - The ability of a measure to produce consistent results when the same entities are tested at two different points in time.
+    
+
+## Data collection 2: How to measure
+
+-
+
+  - **Correlational research**
+    - Observing what naturally goes on in the world without directly interfering with it.
+
+  - **Cross-sectional research**
+    - This term implies that data come from people at different age points, with different people representing each age point.
+
+  - **Experimental research**
+    - One or more variable is systematically manipulated to see their effect (alone or in combination) on an outcome variable.
+    - Statements can be made about cause and effect.
+    
+
+## The research process
+
+<br>
+
+![](plot/research-process-3.png){fig-align="center" width="60%" height="60%"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
