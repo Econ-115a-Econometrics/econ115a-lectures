@@ -50,13 +50,14 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 
 ## Lessons
 
--   Research process
--   Types of data analysis
--   Generating and testing theories
--   Levels of measurement
--   Validity and reliability
--   Central tendency
--   Type of hypotheses
+- 
+  -   Research process
+  -   Types of data analysis
+  -   Generating and testing theories
+  -   Levels of measurement
+  -   Validity and reliability
+  -   Central tendency
+  -   Type of hypotheses
 
 ## The research process
 
