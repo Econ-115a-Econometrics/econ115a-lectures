@@ -11,6 +11,7 @@ format:
     code-summary: "code"
     chalkboard: true
     slide-number: true
+    logo: plot/econ115a-hex-logo.png
     footer: "Econ 115a: Econometrics"
     quiz:
       defaultCorrect: "Correct!"
