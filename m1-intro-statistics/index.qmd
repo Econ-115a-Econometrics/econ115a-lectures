@@ -269,6 +269,35 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
         -   The ability of the measure to produce the same results under the same conditions.
     -   **Test–Retest Reliability**
         -   The ability of a measure to produce consistent results when the same entities are tested at two different points in time.
+        
+
+
+## Which type of validity assesses whether a measurement tool covers all relevant aspects of the concept being studied? {.quiz-question}
+
+- Construct validity
+- [Content validity]{.correct data-explanation="Content validity ensures that a measurement instrument includes all necessary components of the concept it aims to measure. For example, a survey on empowerment should include questions on decision-making, mobility, and access to resources—not just income."}
+- External validity
+- Ecological validity
+
+
+
+## Which type of validity is concerned with whether study results can be generalized to real-world settings? {.quiz-question}
+
+- Content validity
+- Face validity
+- Internal validity
+- [Ecological validity]{.correct data-explanation="Ecological validity refers to the extent to which the findings of a study can be applied to real-life situations. For example, results from an urban SMS trial may not generalize to rural areas with limited phone access."}
+
+
+
+## A survey on farmer empowerment includes only questions about income and land ownership. What type of validity is most likely lacking? {.quiz-question}
+
+- Statistical conclusion validity
+- Ecological validity
+- [Content validity]{.correct data-explanation="This survey lacks content validity because it does not capture all dimensions of empowerment, such as decision-making, mobility, and access to extension services."}
+- Face validity
+
+
 
 ## Data collection 2: How to measure
 
@@ -559,3 +588,10 @@ $$
 $$
 test\ statistic = \frac{variance\ explained\ by\ the\ model} {variance\ not\ explained\ by\ the\ model} = \frac{effect}{error}
 $$
+
+
+
+## {.center}
+
+![](plot/econ115a-hex-logo.png){fig-align="center" width="40%" height="40%"}
+
