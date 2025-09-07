@@ -34,8 +34,8 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-# setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
-setwd("D:/Githu-repository/econ115a-lectures/m1-intro-statistics")
+setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
+# setwd("D:/Githu-repository/econ115a-lectures/m1-intro-statistics")
 
 ## Libraries
 library(tidyverse)
@@ -195,6 +195,43 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 |     -   The same as a nominal variable but the categories have a logical order          |                                                                                                                             |
 |     -   e.g. whether people got a fail, a pass, a merit or a distinction in their exam. |                                                                                                                             |
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
+## Which level of measurement involves categories with no inherent order? {.quiz-question}
+
+- [Nominal]{.correct data-explanation="Nominal variables classify data into distinct categories without any logical order. For example, dietary preferences like omnivore, vegetarian, vegan, or fruitarian are nominal."}
+- Interval
+- Ratio
+- Ordinal
+
+
+
+## Which level of measurement allows for meaningful ratios and has a true zero point? {.quiz-question}
+
+- Nominal
+- [Ratio]{.correct data-explanation="Ratio variables have all the properties of interval variables, but also include a true zero point, allowing for meaningful comparisons like 'twice as much'. For example, a score of 16 on an anxiety scale means twice the anxiety of a score of 8."}
+- Interval
+- Ordinal
+
+
+
+## Which type of variable has only two categories, such as 'dead' or 'alive'? {.quiz-question}
+
+- Interval
+- [Binary]{.correct data-explanation="Binary variables are categorical variables with only two possible values, such as 'yes' or 'no', 'dead' or 'alive'."}
+- Nominal
+- Ordinal
+
+
+
+## Which level of measurement includes categories that have a logical order but no consistent interval between them? {.quiz-question}
+
+- Interval
+- Nominal
+- Ratio
+- [Ordinal]{.correct data-explanation="Ordinal variables have categories with a meaningful order, such as exam results: fail, pass, merit, distinction. However, the intervals between categories are not necessarily equal."}
+
+
 
 ## Measurement error
 
