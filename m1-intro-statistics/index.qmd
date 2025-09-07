@@ -1,7 +1,7 @@
 ---
 title: ". "
 title-slide-attributes:
-  data-background-image: "plot/module-1.png"
+  data-background-image: "plot/intro-stat-methods.png"
   data-background-size: "cover"
 format: 
   revealjs:
@@ -11,6 +11,7 @@ format:
     code-summary: "code"
     chalkboard: true
     slide-number: true
+    logo: plot/econ115a-hex-logo.png
     footer: "Econ 115a: Econometrics"
     quiz:
       defaultCorrect: "Correct!"
@@ -33,7 +34,8 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
+# setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
+setwd("D:/Githu-repository/econ115a-lectures/m1-intro-statistics")
 
 ## Libraries
 library(tidyverse)
@@ -115,6 +117,45 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 -   A table of the number of people at the Big Brother audition split by whether they had narcissistic personality disorder and whether they were selected as contestants by the producers.
 
 ![](plot/table-1.png){fig-align="center" width="60%" height="60%"}
+
+
+
+## Why is reading other research important in the early stages of inquiry? {.quiz-question}
+
+- To replicate existing models without modification. 
+
+- To avoid collecting new data. 
+
+- [To understand existing theories and refine your hypothesis]{.correct data-explanation="Reviewing prior research helps situate your inquiry within existing knowledge and guides theory development."} 
+
+- To finalize your conclusions.
+
+
+
+## What is a theory in the context of statistical research? {.quiz-question}
+
+- [A general principle explaining known findings and generating new hypotheses]{.correct data-explanation="A theory is a hypothesized general principle that explains known findings and helps generate new hypotheses"} 
+
+- A method for collecting data.
+
+- A proven fact about a population.
+
+- A random guess about data.
+
+
+
+## Which of the following best defines a hypothesis? {.quiz-question}
+
+- [A prediction derived from a theory]{.correct data-explanation="A hypothesis is a testable prediction that stems from a theory"} 
+
+- A summary of previous research.
+
+- A statistical model.
+
+- A method for data collection.
+
+
+
 
 ## The research process
 
