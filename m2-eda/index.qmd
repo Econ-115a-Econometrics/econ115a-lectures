@@ -54,33 +54,28 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 
 ## Lessons
 
--
-  -   Overview of EDA
-  -   Centrality and variability
-  -   Amounts and proportions
-  -   Comparisons
-  -   Trends
-  -   Presenting data using graphs
-  -   Descriptive statistics
-  
+-   
 
+    -   Overview of EDA
+    -   Centrality and variability
+    -   Amounts and proportions
+    -   Comparisons
+    -   Trends
+    -   Presenting data using graphs
+    -   Descriptive statistics
 
-## EDA: an introduction
-- 
-  - EDA is an iterative cycle that helps you understand what your data says. It involves:
+## \## EDA: an introduction
+
+-   EDA is an iterative cycle that helps you understand what your data says. It involves:
     -   Generate questions about your data
     -   Search for answers by visualizing, transforming, and modeling your data
     -   Use what you learn to refine your questions and/or generate new questions
-
-
 
 ## EDA: an introduction
 
 Your goal during EDA is to develop an understanding of your data.
 
 > “Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.” — John Tukey
-
-
 
 ## EDA: two useful questions
 
@@ -90,23 +85,17 @@ There is no rule about which questions you should ask to guide your research. Ho
 
 2.  What type of covariation occurs between my variables?
 
-
-
 ## Is EDA a tool for discovery or confirmation? {.quiz-question}
 
 -   [Discovery]{.correct data-explanation="Correct! EDA is a tool for discovery; in fact, EDA is one of the most fruitful tools for discovery in science. We’ll focus on discovery throughout this primer, but remember that you should test any pattern that you discover before you rely on it."}
 
 -   [Confirmation]{data-explanation="Not quite. EDA reveals patterns, but it does not confirm that those patterns exist beyond your data set."}
 
-
-
 ## When you begin to explore data, is it better to formulate one or two high-quality questions to ask, or many, many questions to explore? {.quiz-question}
 
 -   [One or two high-quality questions]{data-explanation="Not quite. It is hard to spot useful questions ahead of time because you don’t know which discoveries are waiting in your data."}
 
 -   [Many, many questions]{.correct data-explanation="Correct! Each question you ask creates a new opportunity to discover something surprising. You can lead yourself to high-value questions by iterating on questions that reveal unexpected results."}
-
-
 
 ## Centrality (aka the "Average" value)
 
@@ -158,8 +147,6 @@ knitr::include_graphics("plot/wildlife_impacts_hist.png")
 :::
 :::::
 
-
-
 ## Variability ("spread")
 
 -   **Standard deviation**: distribution of values relative to the mean
@@ -169,8 +156,6 @@ knitr::include_graphics("plot/wildlife_impacts_hist.png")
 -   **Interquartile range (IQR)**: $Q_3 - Q_1$ (middle 50% of data)
 
 -   **Range**: max - min
-
-
 
 ## Variability ("spread")
 
@@ -206,8 +191,6 @@ days_to_ship |>
 ```
 :::
 :::::
-
-
 
 ## Variability ("spread")
 
@@ -247,8 +230,6 @@ days_to_ship |>
 ```
 :::
 :::::
-
-
 
 ## Variability ("spread")
 
@@ -300,8 +281,6 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 :::
 :::::
 
-
-
 ## Outliers
 
 <br>
@@ -319,8 +298,6 @@ Robust statistics for continuous data (less sensitive to outliers)
 -   **Centrality**: use *median* rather than *mean*
 
 -   **Variability**: use *IQR* rather than *standard deviation*
-
-
 
 ## "Visualizing data helps us think"
 
@@ -349,8 +326,6 @@ anscombe_summary_stats <-
 anscombe_summary_stats
 ```
 
-
-
 ## Anscombe's Quartet
 
 -   Stephen Few (2009, p6)
@@ -358,8 +333,6 @@ anscombe_summary_stats
 ```{r}
 knitr::include_graphics("plot/p_corr_anscombe.png")
 ```
-
-
 
 ## Data types determines how to summarize it
 
@@ -380,8 +353,6 @@ knitr::include_graphics("plot/p_corr_anscombe.png")
 | -   Bars              | -   Bars             | -   Histogram                      |
 |                       |                      | -   Boxplot                        |
 +-----------------------+----------------------+------------------------------------+
-
-
 
 ## Summarizing Nominal data
 
@@ -420,8 +391,6 @@ knitr::include_graphics("plot/nominal_barplot.jpeg")
 :::
 :::::
 
-
-
 ## Summarizing Ordinal data
 
 ::::: columns
@@ -456,8 +425,6 @@ knitr::include_graphics("plot/ordinal_barplot.jpeg")
 :::
 :::::
 
-
-
 ## Summarizing continuous data
 
 ::::: columns
@@ -483,8 +450,6 @@ knitr::include_graphics("plot/eda-boxplot.png")
 ```
 :::
 :::::
-
-
 
 ## **Histogram**: Identify Skewness & \# of Modes
 
@@ -512,9 +477,7 @@ ggplot(wildlife_impacts) +
 :::
 :::::
 
-
-
-## Histogram: Identify Skewness &  of Modes
+## Histogram: Identify Skewness & of Modes
 
 ::::: columns
 ::: {.column width="50%"}
@@ -534,8 +497,6 @@ ggplot(wildlife_impacts) +
 ```
 :::
 :::::
-
-
 
 ## Boxplot: Identify outliers
 
@@ -585,6 +546,3 @@ ggplot(wildlife_impacts) +
 ```
 :::
 :::::
-
-
-
