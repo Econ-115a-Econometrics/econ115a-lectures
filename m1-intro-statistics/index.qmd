@@ -34,8 +34,8 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-# setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
-setwd("D:/Githu-repository/econ115a-lectures/m1-intro-statistics")
+setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m1-intro-statistics")
+# setwd("D:/Githu-repository/econ115a-lectures/m1-intro-statistics")
 
 ## Libraries
 library(tidyverse)
@@ -196,6 +196,43 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 |     -   e.g. whether people got a fail, a pass, a merit or a distinction in their exam. |                                                                                                                             |
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
+
+## Which level of measurement involves categories with no inherent order? {.quiz-question}
+
+- [Nominal]{.correct data-explanation="Nominal variables classify data into distinct categories without any logical order. For example, dietary preferences like omnivore, vegetarian, vegan, or fruitarian are nominal."}
+- Interval
+- Ratio
+- Ordinal
+
+
+
+## Which level of measurement allows for meaningful ratios and has a true zero point? {.quiz-question}
+
+- Nominal
+- [Ratio]{.correct data-explanation="Ratio variables have all the properties of interval variables, but also include a true zero point, allowing for meaningful comparisons like 'twice as much'. For example, a score of 16 on an anxiety scale means twice the anxiety of a score of 8."}
+- Interval
+- Ordinal
+
+
+
+## Which type of variable has only two categories, such as 'dead' or 'alive'? {.quiz-question}
+
+- Interval
+- [Binary]{.correct data-explanation="Binary variables are categorical variables with only two possible values, such as 'yes' or 'no', 'dead' or 'alive'."}
+- Nominal
+- Ordinal
+
+
+
+## Which level of measurement includes categories that have a logical order but no consistent interval between them? {.quiz-question}
+
+- Interval
+- Nominal
+- Ratio
+- [Ordinal]{.correct data-explanation="Ordinal variables have categories with a meaningful order, such as exam results: fail, pass, merit, distinction. However, the intervals between categories are not necessarily equal."}
+
+
+
 ## Measurement error
 
 -   
@@ -232,6 +269,35 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
         -   The ability of the measure to produce the same results under the same conditions.
     -   **Test–Retest Reliability**
         -   The ability of a measure to produce consistent results when the same entities are tested at two different points in time.
+        
+
+
+## Which type of validity assesses whether a measurement tool covers all relevant aspects of the concept being studied? {.quiz-question}
+
+- Construct validity
+- [Content validity]{.correct data-explanation="Content validity ensures that a measurement instrument includes all necessary components of the concept it aims to measure. For example, a survey on empowerment should include questions on decision-making, mobility, and access to resources—not just income."}
+- External validity
+- Ecological validity
+
+
+
+## Which type of validity is concerned with whether study results can be generalized to real-world settings? {.quiz-question}
+
+- Content validity
+- Face validity
+- Internal validity
+- [Ecological validity]{.correct data-explanation="Ecological validity refers to the extent to which the findings of a study can be applied to real-life situations. For example, results from an urban SMS trial may not generalize to rural areas with limited phone access."}
+
+
+
+## A survey on farmer empowerment includes only questions about income and land ownership. What type of validity is most likely lacking? {.quiz-question}
+
+- Statistical conclusion validity
+- Ecological validity
+- [Content validity]{.correct data-explanation="This survey lacks content validity because it does not capture all dimensions of empowerment, such as decision-making, mobility, and access to extension services."}
+- Face validity
+
+
 
 ## Data collection 2: How to measure
 
@@ -522,3 +588,10 @@ $$
 $$
 test\ statistic = \frac{variance\ explained\ by\ the\ model} {variance\ not\ explained\ by\ the\ model} = \frac{effect}{error}
 $$
+
+
+
+## {.center}
+
+![](plot/econ115a-hex-logo.png){fig-align="center" width="40%" height="40%"}
+

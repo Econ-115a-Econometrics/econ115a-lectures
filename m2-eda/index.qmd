@@ -1,7 +1,7 @@
 ---
 title: ". "
 title-slide-attributes:
-  data-background-image: "plot/module-5.png"
+  data-background-image: "plot/eda.png"
   data-background-size: "cover"
 format: 
   revealjs:
@@ -11,7 +11,7 @@ format:
     code-summary: "code"
     chalkboard: true
     slide-number: true
-    footer: "Econ 148: Analytical and statistical packages for economics 1"
+    footer: "Econ 115a: Econometrics"
     quiz:
       defaultCorrect: "Correct!"
       defaultIncorrect: "Incorrect!"
@@ -55,7 +55,6 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 ## Lessons
 
 -   
-
     -   Overview of EDA
     -   Centrality and variability
     -   Amounts and proportions
@@ -64,7 +63,8 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
     -   Presenting data using graphs
     -   Descriptive statistics
 
-## \## EDA: an introduction
+
+## EDA: an introduction
 
 -   EDA is an iterative cycle that helps you understand what your data says. It involves:
     -   Generate questions about your data
@@ -291,6 +291,8 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 Source: [Data Science Discovery](https://discovery.cs.illinois.edu/learn/Exploratory-Data-Analysis/Quartiles-and-Box-Plots/)
 :::
 
+
+
 ## Outliers
 
 Robust statistics for continuous data (less sensitive to outliers)
@@ -298,6 +300,14 @@ Robust statistics for continuous data (less sensitive to outliers)
 -   **Centrality**: use *median* rather than *mean*
 
 -   **Variability**: use *IQR* rather than *standard deviation*
+
+
+# Descriptive statistics
+
+-
+  - insert overview of what a descriptive statistics
+  - example of tables for descriptive statistics
+  - how to run a descriptive statistics
 
 ## "Visualizing data helps us think"
 
