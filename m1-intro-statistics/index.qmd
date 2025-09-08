@@ -118,44 +118,51 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 
 ![](plot/table-1.png){fig-align="center" width="60%" height="60%"}
 
+## Theory and hypothesis examples
 
++---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Theory                                                                                | Hypotheses                                                                                                                                               |
++=======================================================================================+==========================================================================================================================================================+
+| -                                                                                     | -                                                                                                                                                        |
+|                                                                                       |                                                                                                                                                          |
+|     -   Crop yield is influenced by the amount of nitrogen in the soil.               |     -   Corn plants grown in soil with 100 kg/ha of nitrogen fertilizer will produce 20% more yield than those grown in soil with 50 kg/ha.              |
+|                                                                                       |                                                                                                                                                          |
+|     -   Pest infestation reduces crop productivity.                                   |     -   Rice fields treated with organic pesticide will have 30% higher yield than untreated fields over one growing season.                             |
+|                                                                                       |                                                                                                                                                          |
+|     -   Attractive packaging influences consumer purchasing decisions in agribusiness |     -   Mangoes sold in biodegradable, colorful packaging will have 25% higher sales than mangoes sold in plain plastic bags at local markets.           |
+|                                                                                       |                                                                                                                                                          |
+|     -   Digital marketing increases brand awareness among rural consumers.            |     -   Farmers exposed to three Facebook ads per week for a new organic fertilizer will recall the brand name 40% more often than those who see no ads. |
++---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## Why is reading other research important in the early stages of inquiry? {.quiz-question}
 
-- To replicate existing models without modification. 
+-   To replicate existing models without modification.
 
-- To avoid collecting new data. 
+-   To avoid collecting new data.
 
-- [To understand existing theories and refine your hypothesis]{.correct data-explanation="Reviewing prior research helps situate your inquiry within existing knowledge and guides theory development."} 
+-   [To understand existing theories and refine your hypothesis]{.correct data-explanation="Reviewing prior research helps situate your inquiry within existing knowledge and guides theory development."}
 
-- To finalize your conclusions.
-
-
+-   To finalize your conclusions.
 
 ## What is a theory in the context of statistical research? {.quiz-question}
 
-- [A general principle explaining known findings and generating new hypotheses]{.correct data-explanation="A theory is a hypothesized general principle that explains known findings and helps generate new hypotheses"} 
+-   [A general principle explaining known findings and generating new hypotheses]{.correct data-explanation="A theory is a hypothesized general principle that explains known findings and helps generate new hypotheses"}
 
-- A method for collecting data.
+-   A method for collecting data.
 
-- A proven fact about a population.
+-   A proven fact about a population.
 
-- A random guess about data.
-
-
+-   A random guess about data.
 
 ## Which of the following best defines a hypothesis? {.quiz-question}
 
-- [A prediction derived from a theory]{.correct data-explanation="A hypothesis is a testable prediction that stems from a theory"} 
+-   [A prediction derived from a theory]{.correct data-explanation="A hypothesis is a testable prediction that stems from a theory"}
 
-- A summary of previous research.
+-   A summary of previous research.
 
-- A statistical model.
+-   A statistical model.
 
-- A method for data collection.
-
-
-
+-   A method for data collection.
 
 ## The research process
 
@@ -196,42 +203,33 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 |     -   e.g. whether people got a fail, a pass, a merit or a distinction in their exam. |                                                                                                                             |
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
-
 ## Which level of measurement involves categories with no inherent order? {.quiz-question}
 
-- [Nominal]{.correct data-explanation="Nominal variables classify data into distinct categories without any logical order. For example, dietary preferences like omnivore, vegetarian, vegan, or fruitarian are nominal."}
-- Interval
-- Ratio
-- Ordinal
-
-
+-   [Nominal]{.correct data-explanation="Nominal variables classify data into distinct categories without any logical order. For example, dietary preferences like omnivore, vegetarian, vegan, or fruitarian are nominal."}
+-   Interval
+-   Ratio
+-   Ordinal
 
 ## Which level of measurement allows for meaningful ratios and has a true zero point? {.quiz-question}
 
-- Nominal
-- [Ratio]{.correct data-explanation="Ratio variables have all the properties of interval variables, but also include a true zero point, allowing for meaningful comparisons like 'twice as much'. For example, a score of 16 on an anxiety scale means twice the anxiety of a score of 8."}
-- Interval
-- Ordinal
-
-
+-   Nominal
+-   [Ratio]{.correct data-explanation="Ratio variables have all the properties of interval variables, but also include a true zero point, allowing for meaningful comparisons like 'twice as much'. For example, a score of 16 on an anxiety scale means twice the anxiety of a score of 8."}
+-   Interval
+-   Ordinal
 
 ## Which type of variable has only two categories, such as 'dead' or 'alive'? {.quiz-question}
 
-- Interval
-- [Binary]{.correct data-explanation="Binary variables are categorical variables with only two possible values, such as 'yes' or 'no', 'dead' or 'alive'."}
-- Nominal
-- Ordinal
-
-
+-   Interval
+-   [Binary]{.correct data-explanation="Binary variables are categorical variables with only two possible values, such as 'yes' or 'no', 'dead' or 'alive'."}
+-   Nominal
+-   Ordinal
 
 ## Which level of measurement includes categories that have a logical order but no consistent interval between them? {.quiz-question}
 
-- Interval
-- Nominal
-- Ratio
-- [Ordinal]{.correct data-explanation="Ordinal variables have categories with a meaningful order, such as exam results: fail, pass, merit, distinction. However, the intervals between categories are not necessarily equal."}
-
-
+-   Interval
+-   Nominal
+-   Ratio
+-   [Ordinal]{.correct data-explanation="Ordinal variables have categories with a meaningful order, such as exam results: fail, pass, merit, distinction. However, the intervals between categories are not necessarily equal."}
 
 ## Measurement error
 
@@ -269,35 +267,27 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
         -   The ability of the measure to produce the same results under the same conditions.
     -   **Test–Retest Reliability**
         -   The ability of a measure to produce consistent results when the same entities are tested at two different points in time.
-        
-
 
 ## Which type of validity assesses whether a measurement tool covers all relevant aspects of the concept being studied? {.quiz-question}
 
-- Construct validity
-- [Content validity]{.correct data-explanation="Content validity ensures that a measurement instrument includes all necessary components of the concept it aims to measure. For example, a survey on empowerment should include questions on decision-making, mobility, and access to resources—not just income."}
-- External validity
-- Ecological validity
-
-
+-   Construct validity
+-   [Content validity]{.correct data-explanation="Content validity ensures that a measurement instrument includes all necessary components of the concept it aims to measure. For example, a survey on empowerment should include questions on decision-making, mobility, and access to resources—not just income."}
+-   External validity
+-   Ecological validity
 
 ## Which type of validity is concerned with whether study results can be generalized to real-world settings? {.quiz-question}
 
-- Content validity
-- Face validity
-- Internal validity
-- [Ecological validity]{.correct data-explanation="Ecological validity refers to the extent to which the findings of a study can be applied to real-life situations. For example, results from an urban SMS trial may not generalize to rural areas with limited phone access."}
-
-
+-   Content validity
+-   Face validity
+-   Internal validity
+-   [Ecological validity]{.correct data-explanation="Ecological validity refers to the extent to which the findings of a study can be applied to real-life situations. For example, results from an urban SMS trial may not generalize to rural areas with limited phone access."}
 
 ## A survey on farmer empowerment includes only questions about income and land ownership. What type of validity is most likely lacking? {.quiz-question}
 
-- Statistical conclusion validity
-- Ecological validity
-- [Content validity]{.correct data-explanation="This survey lacks content validity because it does not capture all dimensions of empowerment, such as decision-making, mobility, and access to extension services."}
-- Face validity
-
-
+-   Statistical conclusion validity
+-   Ecological validity
+-   [Content validity]{.correct data-explanation="This survey lacks content validity because it does not capture all dimensions of empowerment, such as decision-making, mobility, and access to extension services."}
+-   Face validity
 
 ## Data collection 2: How to measure
 
@@ -589,9 +579,6 @@ $$
 test\ statistic = \frac{variance\ explained\ by\ the\ model} {variance\ not\ explained\ by\ the\ model} = \frac{effect}{error}
 $$
 
-
-
-## {.center}
+##  {.center}
 
 ![](plot/econ115a-hex-logo.png){fig-align="center" width="40%" height="40%"}
-

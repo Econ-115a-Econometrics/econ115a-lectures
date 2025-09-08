@@ -365,6 +365,10 @@ knitr::include_graphics("plot/p_corr_anscombe.png")
 |                       |                      | -   Boxplot                        |
 +-----------------------+----------------------+------------------------------------+
 
+## Summarizing categorical data
+
+## Summarizing numerical data
+
 ## Summarizing Nominal data
 
 ::::: columns
