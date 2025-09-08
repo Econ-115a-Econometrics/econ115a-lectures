@@ -33,7 +33,8 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m2-eda")
+# setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m2-eda")
+setwd("D:/Githu-repository/econ115a-lectures/m2-eda")
 
 ## Libraries
 library(tidyverse)
@@ -55,11 +56,13 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 ## Lessons
 
 -   
-
     -   Overview of EDA
+    -   Centrality and variability
+    -   Amounts and proportions
+    -   Comparisons
+    -   Trends
+    -   Presenting data using graphs
     -   Descriptive statistics
-    -   Visualizing numerical data
-    -   Visualizing categorical data
 
 
 ## EDA: an introduction
@@ -279,8 +282,6 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 :::
 :::::
 
-
-
 ## Outliers
 
 <br>
@@ -308,7 +309,6 @@ Robust statistics for continuous data (less sensitive to outliers)
   - insert overview of what a descriptive statistics
   - example of tables for descriptive statistics
   - how to run a descriptive statistics
-
 
 ## "Visualizing data helps us think"
 
