@@ -33,8 +33,8 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-# setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m2-eda")
-setwd("D:/Githu-repository/econ115a-lectures/m2-eda")
+setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m2-eda")
+# setwd("D:/Githu-repository/econ115a-lectures/m2-eda")
 
 ## Libraries
 library(tidyverse)
@@ -56,13 +56,14 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 ## Lessons
 
 -   
+
     -   Overview of EDA
     -   Centrality and variability
     -   Amounts and proportions
     -   Comparisons
     -   Trends
-    -   Presenting data using graphs
     -   Descriptive statistics
+    -   Presenting data
 
 
 ## EDA: an introduction
@@ -292,8 +293,6 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 Source: [Data Science Discovery](https://discovery.cs.illinois.edu/learn/Exploratory-Data-Analysis/Quartiles-and-Box-Plots/)
 :::
 
-
-
 ## Outliers
 
 Robust statistics for continuous data (less sensitive to outliers)
@@ -302,13 +301,13 @@ Robust statistics for continuous data (less sensitive to outliers)
 
 -   **Variability**: use *IQR* rather than *standard deviation*
 
-
 # Descriptive statistics
 
--
-  - insert overview of what a descriptive statistics
-  - example of tables for descriptive statistics
-  - how to run a descriptive statistics
+-   
+
+    -   insert overview of what a descriptive statistics
+    -   example of tables for descriptive statistics
+    -   how to run a descriptive statistics
 
 ## "Visualizing data helps us think"
 
@@ -561,3 +560,85 @@ ggplot(wildlife_impacts) +
 ```
 :::
 :::::
+
+
+# Presenting data using data visualization
+
+## Data visualization
+
+> The simple graph has brought more information to the data analyst’s mind than any other device. — John Tukey
+
+-
+  - data visualization is a key part of EDA
+  - data visualization is the creation and study of the visual representation of data
+  - Several tools are available for visualizing data - **R** is one of them
+  
+
+## Data reproducibility and replicability
+
+<br>
+
+:::: columns
+::: column
+### Reproducibility {.center-text}
+
+-   Obtaining computational results using the same input data, computational steps, methods, code and conditions of analysis.
+:::
+
+::: column
+### Replicability {.center-text}
+
+-   Obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.
+:::
+::::
+
+<br>
+
+::: {.source-text-smaller .center-text}
+[Source: National Academies of Sciences, Engineering, and Medicine. 2019. Reproducibility and Replicability in Science. Washington, DC: The National Academy Press, https://doi.org/10.17226/25303](https://doi.org/10.17226/25303)
+:::
+
+
+## Data reproducibility and replicability
+
+<br>
+
+:::: columns
+::: column
+### Reproducibility {.center-text}
+
+-
+  -   same procedures
+  -   same data
+  -   same code
+:::
+
+::: column
+### Replicability {.center-text}
+
+-
+  -   same procedures
+  -   new data
+  -   new code
+:::
+::::
+
+
+
+## Data reproducibility and  replicability
+
+![](plot/reproduce-replicate-issue.png){fig-align="center" width="50%" height="50%"}
+
+::: {.source-text-smaller .center-text}
+[Source: Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), Article 7604. https://doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
+:::
+
+
+## Data exploration vs. data presentation
+
+
+## Separation of content and design
+
+
+##
+
