@@ -65,6 +65,7 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
     -   Descriptive statistics
     -   Presenting data
 
+# Exploratory data analysis: an overview
 
 ## EDA: an introduction
 
@@ -98,6 +99,8 @@ There is no rule about which questions you should ask to guide your research. Ho
 -   [One or two high-quality questions]{data-explanation="Not quite. It is hard to spot useful questions ahead of time because you don’t know which discoveries are waiting in your data."}
 
 -   [Many, many questions]{.correct data-explanation="Correct! Each question you ask creates a new opportunity to discover something surprising. You can lead yourself to high-value questions by iterating on questions that reveal unexpected results."}
+
+# Descriptive statistics
 
 ## Centrality (aka the "Average" value)
 
@@ -561,24 +564,23 @@ ggplot(wildlife_impacts) +
 :::
 :::::
 
-
 # Presenting data using data visualization
 
 ## Data visualization
 
 > The simple graph has brought more information to the data analyst’s mind than any other device. — John Tukey
 
--
-  - data visualization is a key part of EDA
-  - data visualization is the creation and study of the visual representation of data
-  - Several tools are available for visualizing data - **R** is one of them
-  
+-   
+
+    -   data visualization is a key part of EDA
+    -   data visualization is the creation and study of the visual representation of data
+    -   Several tools are available for visualizing data - **R** is one of them
 
 ## Data reproducibility and replicability
 
 <br>
 
-:::: columns
+::::: columns
 ::: column
 ### Reproducibility {.center-text}
 
@@ -590,7 +592,7 @@ ggplot(wildlife_impacts) +
 
 -   Obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.
 :::
-::::
+:::::
 
 <br>
 
@@ -598,34 +600,33 @@ ggplot(wildlife_impacts) +
 [Source: National Academies of Sciences, Engineering, and Medicine. 2019. Reproducibility and Replicability in Science. Washington, DC: The National Academy Press, https://doi.org/10.17226/25303](https://doi.org/10.17226/25303)
 :::
 
-
 ## Data reproducibility and replicability
 
 <br>
 
-:::: columns
+::::: columns
 ::: column
 ### Reproducibility {.center-text}
 
--
-  -   same procedures
-  -   same data
-  -   same code
+-   
+
+    -   same procedures
+    -   same data
+    -   same code
 :::
 
 ::: column
 ### Replicability {.center-text}
 
--
-  -   same procedures
-  -   new data
-  -   new code
+-   
+
+    -   same procedures
+    -   new data
+    -   new code
 :::
-::::
+:::::
 
-
-
-## Data reproducibility and  replicability
+## Data reproducibility and replicability
 
 ![](plot/reproduce-replicate-issue.png){fig-align="center" width="50%" height="50%"}
 
@@ -633,12 +634,50 @@ ggplot(wildlife_impacts) +
 [Source: Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), Article 7604. https://doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
 :::
 
+## Data reproducibility and replicability
+
+![](plot/rep-rep-bar.png){fig-align="center" width="105%" height="105%"}
+
+::: {.source-text-smaller .center-text}
+[Source: Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), Article 7604. https://doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
+:::
 
 ## Data exploration vs. data presentation
 
+<br>
+
++----------------------+----------------------------+------------------------------------+
+| Aspect               | Data exploration           | Data presentation                  |
++======================+============================+====================================+
+| Goal                 | Discover insights          | Communicate findings               |
++----------------------+----------------------------+------------------------------------+
+| Priority             | Speed and flexibility      | Visual polish and clarity          |
++----------------------+----------------------------+------------------------------------+
+| Acceptable output    | Rough, quick plots         | Refined, publication-ready figures |
++----------------------+----------------------------+------------------------------------+
+| Tool preference      | Dynamic, exploratory tools | Designed-focus hybrid tools        |
++----------------------+----------------------------+------------------------------------+
+| Reproducibility risk | Low concern                | High concern-avoid manual edits    |
++----------------------+----------------------------+------------------------------------+
+
+::: {.source-text-smaller .center-text}
+[Source: Wilke, C. (2020). Fundamentals of data visualization. A primer on making informative and compelling figures.](https://clauswilke.com/dataviz/index.html)
+:::
 
 ## Separation of content and design
 
+<br>
 
-##
++-----------------------+-----------------------------------+-----------------------------------------+
+| Component             | Content                           | Design                                  |
++=======================+===================================+=========================================+
+| Focus                 | Data, transformation, plot types  | Aesthetics, layout, visual polish       |
++-----------------------+-----------------------------------+-----------------------------------------+
+| Examples              | Scatter plot of unemployment data | Font style, background color, gridlines |
++-----------------------+-----------------------------------+-----------------------------------------+
+| Tools                 | Data mapping functions            | Themes, style sheets                    |
++-----------------------+-----------------------------------+-----------------------------------------+
+| Benefit               | Analytical clarity                | Visual consistency and appeal           |
++-----------------------+-----------------------------------+-----------------------------------------+
 
+## 
