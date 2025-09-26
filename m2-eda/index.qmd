@@ -58,14 +58,14 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 -   
 
     -   Overview of EDA
-    -   Centrality and variability
-    -   Amounts and proportions
-    -   Comparisons
-    -   Trends
     -   Descriptive statistics
-    -   Presenting data
+    -   Data visualization
 
-# Exploratory data analysis: an overview
+
+
+# Exploratory data analysis (EDA): an overview
+
+
 
 ## EDA: an introduction
 
@@ -74,11 +74,15 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
     -   Search for answers by visualizing, transforming, and modeling your data
     -   Use what you learn to refine your questions and/or generate new questions
 
+
+
 ## EDA: an introduction
 
 Your goal during EDA is to develop an understanding of your data.
 
 > “Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.” — John Tukey
+
+
 
 ## EDA: two useful questions
 
@@ -87,6 +91,8 @@ There is no rule about which questions you should ask to guide your research. Ho
 1.  What type of variation occurs within my variables?
 
 2.  What type of covariation occurs between my variables?
+
+
 
 ## Is EDA a tool for discovery or confirmation? {.quiz-question}
 
@@ -100,7 +106,11 @@ There is no rule about which questions you should ask to guide your research. Ho
 
 -   [Many, many questions]{.correct data-explanation="Correct! Each question you ask creates a new opportunity to discover something surprising. You can lead yourself to high-value questions by iterating on questions that reveal unexpected results."}
 
+
+
 # Descriptive statistics
+
+
 
 ## Centrality (aka the "Average" value)
 
@@ -116,7 +126,9 @@ A single number representing the *middle* of a set of numbers
 -   **Mode**: Most frequent value (usually for categorical data)
 :::
 
-## Centrality (aka the "Average" value)
+
+
+## Centrality (aka the "average" value)
 
 ### Mean is not the always "best" choice
 
@@ -133,6 +145,8 @@ wildlife_impacts %>%
       mean = mean(height),
       median = median(height))
 ```
+
+<br>
 
 Percent of data below mean:
 
@@ -164,9 +178,12 @@ knitr::include_graphics("plot/wildlife_impacts_hist.png")
 
 ## Variability ("spread")
 
--   Complaints are coming in about orders shipped from warehouse B, so you collect some data.
+-
+  -   Complaints are coming in about orders shipped from warehouse B, so you collect some data.
 
--   ... here **averages** are misleading
+<br>
+
+  -   ... here **averages** are misleading
 
 ::::: columns
 ::: {.column width="50%"}
@@ -199,10 +216,14 @@ days_to_ship |>
 
 ## Variability ("spread")
 
-::::: columns
--   Complaints are coming in about orders shipped from warehouse B, so you collect some data:
+-
+  -   Complaints are coming in about orders shipped from warehouse B, so you collect some data:
+  
+<br>
 
 -   **variability** reveals difference in days to ship
+
+::::: columns
 
 ::: {.column width="50%"}
 ```{r}
@@ -261,13 +282,14 @@ knitr::include_graphics("plot/days_to_ship.png")
 data1 <- c(3,3,4,5,5,6,6,7,8,9)
 ```
 
--   Mean: `r round(mean(data1), 2)`
-
--   Standard deviation: `r round(sd(data1), 2)`
-
--   Median: `r median(data1)`
-
--   IQR: `r IQR(data1)`
+-
+  -   Mean: `r round(mean(data1), 2)`
+  
+  -   Standard deviation: `r round(sd(data1), 2)`
+  
+  -   Median: `r median(data1)`
+  
+  -   IQR: `r IQR(data1)`
 :::
 
 ::: {.column width="50%"}
@@ -276,13 +298,14 @@ data1 <- c(3,3,4,5,5,6,6,7,8,9)
 data2 <- c(3,3,4,5,5,6,6,7,8,20)
 ```
 
--   Mean: `r mean(data2)`
-
--   Standard deviation: `r round(sd(data2), 2)`
-
--   Median: `r median(data2)`
-
--   IQR: `r IQR(data2)`\
+-
+  -   Mean: `r mean(data2)`
+  
+  -   Standard deviation: `r round(sd(data2), 2)`
+  
+  -   Median: `r median(data2)`
+  
+  -   IQR: `r IQR(data2)`\
 :::
 :::::
 
@@ -296,21 +319,129 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 Source: [Data Science Discovery](https://discovery.cs.illinois.edu/learn/Exploratory-Data-Analysis/Quartiles-and-Box-Plots/)
 :::
 
+
+
 ## Outliers
 
 Robust statistics for continuous data (less sensitive to outliers)
 
--   **Centrality**: use *median* rather than *mean*
+-
+  -   **Centrality**: use *median* rather than *mean*
+  
+  -   **Variability**: use *IQR* rather than *standard deviation*
 
--   **Variability**: use *IQR* rather than *standard deviation*
 
-# Descriptive statistics
 
--   
+## Descriptive statistics table
 
-    -   insert overview of what a descriptive statistics
-    -   example of tables for descriptive statistics
-    -   how to run a descriptive statistics
+```{r}
+#| echo: true
+
+library(vtable)
+
+st(gapminder::gapminder |> select(-country, -continent, -year))
+
+
+```
+
+
+## Descriptive statistics table
+
+```{r}
+#| echo: true
+library(frontier)
+data(riceProdPhil)
+
+st(riceProdPhil |> select(PROD:EDYRS))
+```
+
+
+
+## Which of the following measures is used to represent the central tendency of a dataset? {.quiz-question}
+
+-   [Mean]{.correct data-explanation="The mean is a measure of central tendency that represents the average value of a dataset. It is calculated by summing all the values and dividing by the number of values."}
+
+-   Variance
+
+-   Range
+
+-   Standard deviation
+
+
+
+## What does the term 'variability' in descriptive statistics refer to? {.quiz-question}
+
+- [The spread of data values]{.correct data-explanation="Correct! Variability refers to how spread out the data values are. It includes measures such as range, variance, and standard deviation, which describe the dispersion of data points."}
+
+- The average value of the data
+
+- The number of data points
+
+- The typde of data collected
+
+
+
+## Which visualization tool is most useful for identifying outliers in a dataset? {.quiz-question}
+
+- Pie chart
+
+- Histogram
+
+- [Boxplot]{.correct data-explanation="Correct! A boxplot is particularly useful for identifying outliers. It displays the median, quartiles, and potential outliers as points outside the whiskers of the plot."}
+
+- Line graph
+
+
+
+## Which of the following statements about the mean and median is always true for a perfectly symmetric distribution? {.quiz-question}
+
+- Mean is greater than median
+
+- [Mean equals median]{.correct data-explanation="Correct! In a perfectly symmetric distribution, the mean, median, and mode all coincide."}
+
+- Median is greater than mode
+
+- Mean equals mode
+
+
+
+## If a dataset has a high standard deviation but a low interquartile range (IQR), what does this suggest? {.quiz-question}
+
+- The data is uniformly distributed
+
+- [There are likely outliers]{.correct data-explanation="Correct! A high standard deviation with a low IQR suggests that most data is clustered but a few extreme values are pulling the standard deviation upward."}
+
+- The data is normally distributed
+
+- The mean is unreliable
+
+
+
+## Which measure is most robust to outliers? {.quiz-question}
+
+- Mean
+
+- Range
+
+- [Median]{.correct data-explanation="Correct! The median is resistant to outliers because it depends only on the middle value(s), not the magnitude of extremes."}
+
+- standard deviation
+
+
+
+## Which of the following is a misleading use of descriptive statistics? {.quiz-question}
+
+- [Reporting the mean income in a highly skewed distribution.]{.correct data-explanation="Correct! In skewed distributions (like income), the mean can be distorted by extreme values and may not reflect the typical case."}
+
+- Using the median to describe symmetric data.
+
+- Reporting both mean and standard deviation for normal data.
+
+- Using IQR to describe variability in ordinal data.
+
+
+    
+# Visualizing data
 
 ## "Visualizing data helps us think"
 
