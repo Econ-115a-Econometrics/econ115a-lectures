@@ -441,7 +441,7 @@ st(riceProdPhil |> select(PROD:EDYRS))
 
 
     
-# Visualizing data
+# EDA using data viz
 
 ## "Visualizing data helps us think"
 
