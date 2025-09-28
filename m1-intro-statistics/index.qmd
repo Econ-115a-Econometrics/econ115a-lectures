@@ -528,15 +528,6 @@ $$
 
 
 
-
-
-
-
-
-
-
-
-
 ##  {.center}
 
 ![](plot/econ115a-hex-logo.png){fig-align="center" width="40%" height="40%"}
