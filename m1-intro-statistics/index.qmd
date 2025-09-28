@@ -457,12 +457,85 @@ $$
         -   Mean and SD are intended to describe the entire population (very rare in psychology).
     -   **Sample to Population**
         -   Mean and SD are obtained from a sample, but are used to estimate the mean and SD of the population (very common in psychology).
+        
+        
 
 ## Sample vs Population
 
 <br>
 
 ![](plot/figure-5.png){fig-align="center" width="90%" height="90%"}
+
+
+
+## What does a “perfect fit” in a statistical model imply? {.quiz-question}
+
+- The model has zero variance
+
+- [All predicted values match observed values exactly]{.correct data-explanation="Correct! A perfect fit means the model’s predictions align exactly with the observed data, resulting in zero error."}
+
+- The model uses only nominal data
+
+- The sample size is maximized
+
+
+
+## Which of the following is used to quantify the total error in a model? {.quiz-question}
+
+- Mean absolute deviation
+
+- [Sum of squared errors]{.correct data-explanation="Correct! The sum of squared errors (SSE) aggregates the squared differences between predicted and actual values to assess model fit."}
+
+- Interquartile range
+
+- Mode
+
+
+
+## What does variance measure in a dataset? {.quiz-question}
+
+- The central tendency
+
+- The number of categories
+
+- [The average squared deviation from the mean]{.correct data-explanation="Correct! Variance captures how much the data points deviate from the mean, squared to emphasize larger differences."}
+
+- The correlation between variables
+
+
+
+## Two datasets have the same mean but different standard deviations. What does this indicate? {.quiz-question}
+
+- They have identical distributions
+
+- [One dataset is more spread out than the other]{.correct data-explanation="Correct! A higher standard deviation means the data is more dispersed around the mean."}
+
+- Both datasets are skewed
+
+- The sample sizes are equal
+
+
+
+## Which shape of distribution is most likely to have a higher standard deviation? {.quiz-question}
+
+- Symmetric and narrow
+
+- Uniform
+
+- [Skewed with long tails]{.correct data-explanation="Correct! Skewed distributions with long tails tend to have more extreme values, increasing the standard deviation."}
+
+- Bell-shaped with low variance
+
+
+
+
+
+
+
+
+
+
+
 
 ##  {.center}
 
