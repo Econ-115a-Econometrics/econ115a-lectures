@@ -34,192 +34,14 @@ library(tidyverse)
 
 ## Lessons
 
--   Methods of data collection
-
--   Sampling design in surveys
-
--   Measurement issues in survey research
-
--   Questionnaire construction
-
--   Basics of interviewing
-
--   Creating a codebook
-
--   Data entry
-
-
-
-# Lesson 1: Methods of data collection
-
-
-
-## Introduction
-
-Appropriate measurement of variables is needed in studying behavior.
-
--   Quantitative - numerical values
-
--   Qualitative - can be grouped and assigned numerical values
-
-<br>
-
-::::: fragment
-:::: {.callout-note style="font-size: 1.0em;"}
-## Note
-
-::: incremental
--   Use of faulty data results in misleading conclusions
--   Research processes call for objectivity, integrity, and analytical rigor.
--   Data should be accurate as possible; free from error, bias, and subjectivity.
-:::
-::::
-:::::
-
-
-
-## Methods of data collection
-
--   Census and survey method
-
--   Observation method
-
--   Experimental method
-
-
-
-## Methods of data collection
-
-### Census and survey method
-
-> collect data directly from the subject of the study (respondent units or informants) using a pre-constructed set of questions (questionnaire)
-
-::: incremental
--   **Census**
-
-    -   data collection from all units of a population
-
-    -   e.g., population census and housing
-
--   **Survey**
-
-    -   data collection from a sample of units from a population
-
-    -   e.g., family income and expenditure survey, annual poverty inficator survey
-:::
-
-
-
-## Methods of data collection
-
-### Observation method
-
-> records data as things occur, making use of an appropriate and accepted method of measurement
-
--   e.g., person's blood pressure, number of new covid cases, number of typhoons in a year
-
-
-
-## Methods of data collection
-
-### Experimental method
-
-> collect data through well designed and controlled statistical experiments where the goal is keeping all others constant so as to leave the effect of several studied variables to be shown in the observed measurement in the dependent variable
-
--   e.g., effect of fertilizer on soil quality, effect of a specific teaching methodology on school performance, effect of universal basic income on welfare measures
-
-
-
-
-## Tools of data collection
-
-### Questionnaire approach
-
-> set a pre-specified questions; replies are recorded by respondentes. Assumes that respondent is capable of understanding and answering the questions by him/herself without influence from investigator/enumerator.
-
--   respondent-bias is minimized by keeping questions simple and direct, i.e., yes/no/can't say, good/satisfactory/unsatisfactory
-
-
-
-## Tools of data collection
-
-### Data types
-
--   **Primary data**
-
-    -   data collected through surveys and census are called primary
-
-    -   They are collected afresh.
-
--   **Secondary data**
-
-    -   data on subjects or observations already collected by someone else (e.g., government agencies, research institutions, and other organizations)
-
-
-
-## Tools of data collection
-
-### Errors in data
-
-::: incremental
--   **Sampling error**
-
-    -   arises because because of misrepresentation of the population through the sample.
-
--   **Measurement error**
-
-    -   faulty measurement from lack of clarity about what is to be measured or how it is measured
-
--   **Non-sampling error**
-
-    -   omission of information or non-response
-
--   **Total survey error**
-
-    -   summation of all possible errors
-:::
-
-
-
-## What distinguishes primary data from secondary data? {.quiz-question}
-
-- Primary data is always quantitative
-
-- Secondary data is collected through interviews
-
-- [Primary data is collected firsthand by the researcher]{.correct data-explanation="Correct! Primary data is gathered directly by the researcher for a specific purpose, while secondary data is pre-existing."}
-
-- Secondary data is more reliable
-
-
-
-## Which tool is most appropriate for collecting qualitative data? {.quiz-question}
-
-- Structured questionnaire
-
-- Laboratory experiment
-
-- [Open-ended interview]{.correct data-explanation="Correct! Open-ended interviews allow for rich, descriptive responses ideal for qualitative analysis."}
-
-- Online survey with multiple choice
-
-
-
-## What is a key advantage of using structured questionnaires? {.quiz-question}
-
-- They allow for spontaneous responses
-
-- [They reduce interviewer bias]{.correct data-explanation="Correct! Structured questionnaires standardize the data collection process, minimizing interviewer influence."}
-
-- They are ideal for exploratory research
-
-- They require no pre-testing
-
-
-
-# Lesson 2: Sampling design in surveys
-
-
+- Sampling design in surveys
+- Measurement issues in survey research
+- Questionnaire construction
+- Basics of interviewing
+- Creating a codebook
+- Data entry
+
+# Lesson 1: Sampling design in surveys
 
 ## Sampling design
 
@@ -227,11 +49,9 @@ Appropriate measurement of variables is needed in studying behavior.
 
 > selection of respondent units does not depend on randomness but on some other criteria
 
-::: {.callout-note style="font-size: 1.0em;"}
+::: {.callout-note style="font-size: 2.0em;"}
 non-random samples do not provide representativeness, and is only useful for exploratory research.
 :::
-
-
 
 ## Sampling design
 
@@ -251,11 +71,9 @@ non-random samples do not provide representativeness, and is only useful for exp
     -   relies on referrals from initial respondents to generate additional respondents
 :::
 
-
-
 ## Sampling design
 
-::: callout-note
+::: {.callout-note style="font-size: 2.0em;"}
 ## Purposive sampling
 
 **Example**: A researcher wants to study the impact of COVID-19 on the mental health of frontliners. The researcher selects frontliners who have been working in the hospital for more than 6 months and have been exposed to COVID-19 patients.
@@ -263,11 +81,9 @@ non-random samples do not provide representativeness, and is only useful for exp
 **Example**: A researcher studying the experiences of undocumented immigrants might purposefully select participants who have been in the country for varying lengths of time, have different levels of education, and come from various regions. This allows for a diverse range of experiences to be explored.
 :::
 
-
-
 ## Sampling design
 
-::: callout-note
+::: {.callout-note style="font-size: 2.0em;"}
 ## Convenience sampling
 
 **Example**: A psychology student conducting a study on college student stress might survey students in their own classes or residence hall. This is convenient because it requires minimal effort to recruit participants.
@@ -277,19 +93,15 @@ non-random samples do not provide representativeness, and is only useful for exp
 **Note**: method may not be representative of the entire population, as the people who happen to be at the mall at that time may not be a typical cross-section of the population.
 :::
 
-
-
 ## Sampling design
 
-::: callout-note
+::: {.callout-note style="font-size: 2.0em;"}
 ## Snowball sampling
 
 **Example**: A sociologist studying a marginalized community might start with a few initial participants and ask them to refer other people who might be willing to participate in the study. This can be effective for reaching hard-to-reach populations.
 
 **Example**: A researcher studying the experiences of LGBTQ+ individuals in a conservative community might start by interviewing one person who is open about their identity. This person might then refer the researcher to other LGBTQ+ individuals in the community, who can refer the researcher to others, and so on.
 :::
-
-
 
 ## Sampling design
 
@@ -321,7 +133,7 @@ non-random samples do not provide representativeness, and is only useful for exp
 
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 Using four six-sided dice, let's randomly select four numbers between 1 and 6 with replacement. Samping with replacement simply means that each number is "replaced" after it is selected, so that the same number can show up more thant once.
@@ -354,19 +166,15 @@ sample(1:6, 4, replace = TRUE)
 :::
 :::::
 
-
-
 ## Sampling design
 
 ### Simple random sampling without replacement
 
 > similar with random sampling with replacement, but the selected unit is not replaced back in the population, i.e., no unit gets repeated in the sample.
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 :::
 
@@ -395,19 +203,15 @@ sample(LETTERS)
 :::
 :::::
 
-
-
 ## Sampling design
 
-::: callout-important
+::: {.callout-important style="font-size: 2.0em;"}
 ## Short practice exercise
 
 1.  Write R code to create a population of 100 numbers and sample 10 numbers without replacement.
 
 2.  Write R code to sample 5 numbers from the population {1, 2, 3, 4, 5} with replacement.
 :::
-
-
 
 ## Sampling design
 
@@ -421,11 +225,9 @@ sample(LETTERS)
 
 -   sample will then be a set of compose of $U_r, U_{r+k}, U_{r+2k}, \ldots, U_{r+(n-1)k}$
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Steps in Systematic sampling in R
 
 1.  Define the population $\text{N}$ and sample size $\text{n}$
@@ -439,11 +241,9 @@ sample(LETTERS)
 5.  Extract sample values
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 Supposed you have a population of 100 students and want to select a sample of 20.
@@ -455,11 +255,9 @@ Supposed you have a population of 100 students and want to select a sample of 20
 3.  Set a random starting point $\text{r} = 3$ (randomly chosen between 1 and 5)
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 Supposed you have a population of 100 students and want to select a sample of 20.
@@ -488,11 +286,9 @@ sample_values <- sample_indices
 print(sample_values)
 ```
 
-
-
 ## Sampling design
 
-::: callout-important
+::: {.callout-important style="font-size: 2.0em;"}
 ## Short practice exercise
 
 1.  A population of 1000 individuals is to be sampled using systematic sampling. The sample size is 50. Calculate the sampling interval.
@@ -501,8 +297,6 @@ print(sample_values)
 
 3.  Using the calculated sampling interval (k) and the randomly selected starting point (r), generate the sample indices.
 :::
-
-
 
 ## Sampling design
 
@@ -520,11 +314,9 @@ print(sample_values)
     -   takes into account the variability of each subgroup, adding more observations to subgroups that are more variable.
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 **Proportional sampling**
@@ -542,11 +334,9 @@ Let's assume we have a population of 100 students divided into three strata:
 We want to draw a sample of 20 students proportionally from each stratum.
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 **Proportional sampling**
@@ -583,11 +373,9 @@ sample_data <- population |>
 print(sample_data)
 ```
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 **Disproportional sampling**
@@ -621,8 +409,6 @@ sample_data <- population |>
 print(sample_data)
 ```
 
-
-
 ## Sampling design
 
 ### Cluster sampling
@@ -639,11 +425,9 @@ print(sample_data)
 Image source: [Scribbr](https://www.scribbr.com/methodology/cluster-sampling/)
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 Imagine a municipality divided into barangays (villages or neighborhoods). Each barangay represents a "cluster," and within each selected cluster, we’ll sample all individuals (or a random subset of them).
@@ -657,11 +441,9 @@ Let’s assume:
 -   We’ll randomly select 3 barangays (clusters) and then sample individuals within each selected barangay.
 :::
 
-
-
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 :::
 
@@ -686,8 +468,6 @@ n_clusters <- 3
 
 ```
 
-
-
 ## Summary
 
 +-----------------------+-------------------------------------------------------------+--------------------------------------------------------------+
@@ -708,65 +488,55 @@ n_clusters <- 3
 |                       | -   enables sampling of groups if individuals not available | -   lowest precision                                         |
 +-----------------------+-------------------------------------------------------------+--------------------------------------------------------------+
 
-
-
 ## What is the primary goal of a sampling design in survey research? {.quiz-question}
 
-- To reduce the number of questions
+-   To reduce the number of questions
 
-- [To ensure the sample is representative of the population]{.correct data-explanation="Correct! A well-designed sampling plan ensures that the sample accurately reflects the population, allowing for valid generalizations."}
+-   [To ensure the sample is representative of the population]{.correct data-explanation="Correct! A well-designed sampling plan ensures that the sample accurately reflects the population, allowing for valid generalizations."}
 
-- To eliminate the need for data analysis
+-   To eliminate the need for data analysis
 
-- To increase the response rate
-
-
+-   To increase the response rate
 
 ## Which of the following is a probability sampling method? {.quiz-question}
 
-- Convenience sampling
+-   Convenience sampling
 
-- Purposive sampling
+-   Purposive sampling
 
-- [Simple random sampling]{.correct data-explanation="Correct! Simple random sampling gives every member of the population an equal chance of being selected, making it a probability method."}
+-   [Simple random sampling]{.correct data-explanation="Correct! Simple random sampling gives every member of the population an equal chance of being selected, making it a probability method."}
 
-- Snowball sampling
-
+-   Snowball sampling
 
 ## What type of sampling is most prone to selection bias? {.quiz-question}
 
-- Stratified sampling
+-   Stratified sampling
 
-- Cluster sampling
+-   Cluster sampling
 
-- Systematic sampling
+-   Systematic sampling
 
-- [Convenience sampling]{.correct data-explanation="Correct! Convenience sampling selects participants based on ease of access, which often leads to biased, non-representative samples."}
-
-
+-   [Convenience sampling]{.correct data-explanation="Correct! Convenience sampling selects participants based on ease of access, which often leads to biased, non-representative samples."}
 
 ## In stratified sampling, the population is divided into: {.quiz-question}
 
-- Random clusters
+-   Random clusters
 
-- Equal-sized groups
+-   Equal-sized groups
 
-- [Homogeneous subgroups]{.correct data-explanation="Correct! Stratified sampling divides the population into subgroups (strata) that share similar characteristics, then samples from each."}
+-   [Homogeneous subgroups]{.correct data-explanation="Correct! Stratified sampling divides the population into subgroups (strata) that share similar characteristics, then samples from each."}
 
-- Geographic zones
-
+-   Geographic zones
 
 ## Which sampling method is best when the population is widely dispersed geographically? {.quiz-question}
 
-- Simple random sampling
+-   Simple random sampling
 
-- [Cluster sampling]{.correct data-explanation="Correct! Cluster sampling is efficient for geographically spread populations by sampling entire groups or clusters."}
+-   [Cluster sampling]{.correct data-explanation="Correct! Cluster sampling is efficient for geographically spread populations by sampling entire groups or clusters."}
 
-- Purposive sampling
+-   Purposive sampling
 
-- Quota sampling
-
-
+-   Quota sampling
 
 ## Sampling design
 
@@ -890,7 +660,7 @@ ggplot(data, aes(x = Group, y = Value)) +
 
 ## Sampling design
 
-:::: callout-note
+:::: {.callout-note style="font-size: 2.0em;"}
 ## Take note
 
 ::: incremental
@@ -918,7 +688,7 @@ $$
 
 ### Cochran's formula
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example
 
 A market study by a company wishes to know the proportion of individual that likes its product. It uses a systematic sampling methodology to select the individuals to be part of the survey and used the Cochran's formula to determine the sample size. The company wants to have a 95% confidence level and a margin of error of 10%. The company hypothesized the proportion of the population that likes the product at 75%. What is the sample size needed for the study?
@@ -932,7 +702,7 @@ $$
 
 ### Cochran's formula
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 :::
 
@@ -979,7 +749,7 @@ $$
 
 ### Slovin's formula
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example
 
 A market study by a company wishes to know the proportion of individual that likes its product. It uses a systematic sampling methodology to select the individuals to be part of the survey and used the Slovin's formula to determine the sample size. The company wants to have a 95% confidence level and a margin of error of 5%. Its market is expected to be around 1000 individuals. What is the sample size needed for the study?
@@ -993,7 +763,7 @@ $$
 
 ### Slovin's formula
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 :::
 
@@ -1037,7 +807,7 @@ $$
 \text{margin of error (E)} = Z_{\alpha /2} \times \frac{s}{\sqrt{n}}
 $$
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example
 
 A local government wishes to look at the impact of the COVID-19 pandemic on SMEs income across town. Before the pandemic it was able to capture information on incomes of SMEs, the annual average income was 600,000 with a standard deviation of 140,000. Setting a margin of error of 30,000 and a confidence level of 95%, how many individual entrepreneurs will be surveyed in order to get a representative sample of the town's SME population?
@@ -1045,7 +815,7 @@ A local government wishes to look at the impact of the COVID-19 pandemic on SMEs
 
 ## Sampling design
 
-::: callout-tip
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Example in R
 
 A local government wishes to look at the impact of the COVID-19 pandemic on SMEs income across town. Before the pandemic it was able to capture information on incomes of SMEs, the annual average income was 600,000 with a standard deviation of 140,000. Setting a margin of error of 30,000 and a confidence level of 95%, how many individual entrepreneurs will be surveyed in order to get a representative sample of the town's SME population?
@@ -1093,6 +863,8 @@ cat("The sample size needed for the study is:", ceiling(sample_size), "\n")
 -   Modern research uses power analysis in determining sample size. It is a method of determining the number of observations needed to detect an effect of a given size with a given level of confidence.
 :::
 
+# Lesson 2: Measurement issues in survey research
+
 ## Measurement
 
 -   Research begins with a problem or topic, thinking about the problems results in identifying concepts that capture the phenomenon being examined.
@@ -1105,7 +877,7 @@ cat("The sample size needed for the study is:", ceiling(sample_size), "\n")
 
 ## Measurement
 
-::: callout-note
+::: {.callout-note style="font-size: 2.0em;"}
 ## Measurement issues in research
 
 -   Whether underlying characteristics of the concept allows ordering (ordinal level or categorizing (nominal level)?
@@ -1166,6 +938,9 @@ cat("The sample size needed for the study is:", ceiling(sample_size), "\n")
     -   check how your measurements corresponds to established theories or other measures in literature
 
     -   make sure to have appropriate number of observations that will represent the population
+
+
+# Lesson 3: Questionnaire construction
 
 ## Steps in questinnaire construction
 
@@ -1313,6 +1088,8 @@ Image source: [Statistics Consultations](https://www.statisticsconsultation.com/
 
 -   When a set of answer categories are to be rank-ordered by the respondent, instructions should be clear as how to do the ranking, and how many answers are to be ranked.
 
+# Basics of interviewing
+
 ## Basics of interviewing
 
 ### Phases of the interview process
@@ -1429,7 +1206,7 @@ Image source: [Statistics Consultations](https://www.statisticsconsultation.com/
 
 -   Falsify interviews.
 
-## Assignment: Questionnaire analysis from an OATD thesis {.scrollable}
+## Assignment: reviewing questionnaires from OATD {.scrollable}
 
 <br>
 
