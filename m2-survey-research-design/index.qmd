@@ -34,12 +34,12 @@ library(tidyverse)
 
 ## Lessons
 
-- Sampling design in surveys
-- Measurement issues in survey research
-- Questionnaire construction
-- Basics of interviewing
-- Creating a codebook
-- Data entry
+-   Sampling design in surveys
+-   Measurement issues in survey research
+-   Questionnaire construction
+-   Basics of interviewing
+-   Creating a codebook
+-   Data entry
 
 # Lesson 1: Sampling design in surveys
 
@@ -938,7 +938,6 @@ cat("The sample size needed for the study is:", ceiling(sample_size), "\n")
     -   check how your measurements corresponds to established theories or other measures in literature
 
     -   make sure to have appropriate number of observations that will represent the population
-
 
 # Lesson 3: Questionnaire construction
 
