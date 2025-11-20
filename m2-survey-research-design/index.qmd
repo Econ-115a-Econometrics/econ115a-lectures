@@ -41,7 +41,7 @@ library(tidyverse)
 -   Creating a codebook
 -   Data entry
 
-# Lesson 1: Sampling design in surveys
+# Sampling design in surveys
 
 ## Summary
 
@@ -113,7 +113,6 @@ library(tidyverse)
 
 -   Quota sampling
 
-## Sampling design
 
 # Measurement issues in survey research
 
@@ -173,24 +172,6 @@ library(tidyverse)
 +--------------+--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | -   Ratio    | -   Weight; height; salary; frequency of buying a product          | -   Mean; median; mode; range; variance; standard deviation; coefficient of variation; rank order variance; correlation, t-test, f-test |
 +--------------+--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-
-## Criteria for good measurement
-
--   **Reliability**
-
-    -   is the measurement able to consistently lead to same conclusion?
-
-    -   clearly define how observations will be counted; make sure that questions are phrased for all respondents.
-
-## Criteria for good measurement
-
--   **Validity**
-
-    -   the extent to which a measure captures the concept it is intended to measure.
-
-    -   check how your measurements corresponds to established theories or other measures in literature
-
-    -   make sure to have appropriate number of observations that will represent the population
 
 # Questionnaire construction
 
@@ -478,5 +459,5 @@ Once you've selected a thesis, carefully examine the questionnaire. Consider the
 
 To submit the assignment, answer and accomplished the Google form below:
 
--   [Google form assignment](https://forms.gle/DpDjgCBSoG3HBXCX7)
+-   [Google form assignment]()
 :::
