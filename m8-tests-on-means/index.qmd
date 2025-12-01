@@ -1,7 +1,7 @@
 ---
 title: ". "
 title-slide-attributes:
-  data-background-image: "plot/module-6.png"
+  data-background-image: "plot/test on means.png"
   data-background-size: "cover"
 format: 
   revealjs:
@@ -11,7 +11,7 @@ format:
     code-summary: "code"
     chalkboard: true
     slide-number: true
-    footer: "Econ 148: Analytical and statistical packages for economics 1"
+    footer: "Econ 115a: Econometrics"
     quiz:
       defaultCorrect: "Correct!"
       defaultIncorrect: "Incorrect!"
@@ -33,9 +33,7 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-#setwd("c:\\Users\\viser\\OneDrive\\Dokumen\\Github repository\\econ148-lecture\\module-06-test-means")
-
-setwd("c:\\Users\\chris\\Documents\\Github-repository\\econ148-lecture\\module-06-test-means")
+setwd("c:\\Users\\viser\\OneDrive\\Dokumen\\Github repository\\econ115a-lectures\\m8-tests-on-means")
 
 ## Libraries
 library(tidyverse)
@@ -520,7 +518,7 @@ wilcox.test(price ~ cut, data = diamond_dataset, exact = FALSE)
 
 ## Dependent t-test
 
-:::  {.callout-tip style="font-size: 2.0em;"}
+::: {.callout-tip style="font-size: 2.0em;"}
 -   Steps in hypothesis testing:
 
     1.  State the hypotheses.
@@ -538,7 +536,7 @@ wilcox.test(price ~ cut, data = diamond_dataset, exact = FALSE)
 
 ## Dependent t-test
 
-:::  {.callout-tip style="font-size: 2.0em;"}
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Activity: Dependent t-test
 
 Using the a synthetic data on training scores of before and after a training program, test whether there is a statistically significant difference in the scores before and after the training program.
@@ -703,7 +701,7 @@ ggwithinstats(
 
 ## One-way Anova
 
-:::  {.callout-tip style="font-size: 2.0em;"}
+::: {.callout-tip style="font-size: 2.0em;"}
 ## Steps in Hypothesis testing
 
 1.  State the hypotheses
