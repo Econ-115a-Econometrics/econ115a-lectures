@@ -33,7 +33,7 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m2-eda")
+setwd("C:/Users/chris/Documents/Github-repository/econ115a-lectures/m3-eda")
 # setwd("D:/Githu-repository/econ115a-lectures/m2-eda")
 
 ## Libraries
@@ -58,31 +58,28 @@ theme_set(theme_bw(base_size = 18)) # Set theme for all ggplots
 -   
 
     -   Overview of EDA
-    -   Descriptive statistics
-    -   Data visualization
+    -   Examining numerical data
+    -   Considering categorical data
+    -   Centrality and variability
+    -   Amounts and proportions
+    -   Comparisons
+    -   Trends
 
-
-
-# Exploratory data analysis (EDA): an overview
-
-
+# Lesson 1: What is EDA?
 
 ## EDA: an introduction
 
 -   EDA is an iterative cycle that helps you understand what your data says. It involves:
+
     -   Generate questions about your data
     -   Search for answers by visualizing, transforming, and modeling your data
     -   Use what you learn to refine your questions and/or generate new questions
-
-
 
 ## EDA: an introduction
 
 Your goal during EDA is to develop an understanding of your data.
 
 > “Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.” — John Tukey
-
-
 
 ## EDA: two useful questions
 
@@ -91,8 +88,6 @@ There is no rule about which questions you should ask to guide your research. Ho
 1.  What type of variation occurs within my variables?
 
 2.  What type of covariation occurs between my variables?
-
-
 
 ## Is EDA a tool for discovery or confirmation? {.quiz-question}
 
@@ -106,11 +101,224 @@ There is no rule about which questions you should ask to guide your research. Ho
 
 -   [Many, many questions]{.correct data-explanation="Correct! Each question you ask creates a new opportunity to discover something surprising. You can lead yourself to high-value questions by iterating on questions that reveal unexpected results."}
 
+# Lesson 2: Examining numerical data
+
+## scatter plots
+
+```{r}
+#| echo: false
+knitr::include_graphics("plot/loan_scatter.png")
+```
+- 
+  -   many borrowers with an income below \$100,000
+  -   a handful of borrowers with income above \$250,000
 
 
-# Descriptive statistics
+## scatter plots: R codes
+
+```{.r}
+loan50 |> 
+  mutate(total_income = total_income / 1000) |> 
+  mutate(loan_amount = loan_amount / 1000) |>
+  ggplot(aes(total_income, loan_amount)) +
+  geom_point(
+    size = 3, 
+    color = "#377eb8"
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 300, 50), 
+    labels = scales::label_currency(suffix = "K"), 
+    limits = c(0, 350), 
+    expand = c(0, 0)
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 40, 10), 
+    labels = scales::label_currency(suffix = "K"), 
+    limits = c(0, 42), 
+    expand = c(0, 0)) +
+  coord_cartesian(clip = "off") +
+  labs(x = "Total Income", 
+       y = "Loan Amount",
+       title = "Scatter Plot of Total Income vs. Loan Amount"
+      )
+```
 
 
+## scatter plots
+
+```{r}
+knitr::include_graphics("plot/poverty_scatter.png")
+```
+
+- 
+  - The relationship is nonlinear, as highlighted by the dashed line.
+  - What implications can you draw from this pattern?
+
+::: {.notes}
+1. Inverse relationship: As poverty rates increase, median household income decreases, following a clear downward trend shown by the dashed curve.
+
+2. Concentration pattern: Most counties cluster in the lower-left region (poverty rates between 5-20% and incomes between $40K-$60K), indicating this is the typical range for U.S. counties.
+
+3. Inverse relationship: As poverty rates increase, median household income decreases, following a clear downward trend shown by the dashed curve.
+
+4. Concentration pattern: Most counties cluster in the lower-left region (poverty rates between 5-20% and incomes between $40K-$60K), indicating this is the typical range for U.S. counties.
+:::
+
+## scatter plots: R codes
+
+```{.r}
+county |> 
+  mutate(median_hh_income = median_hh_income / 1000) |>
+  ggplot(aes(poverty, median_hh_income)) +
+  geom_point(
+    size = 3, 
+    color = "#377eb8", 
+    alpha = 0.8
+  ) +
+  geom_point(
+    size = 0.5, 
+    color = "gray40"
+  ) +
+  geom_smooth(
+    color = "grey30", 
+    lty = "dashed"
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 130, 20), 
+    labels = scales::label_currency(suffix = "K"), 
+    limits = c(0, 130), 
+    expand = c(0, 0)
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 50, 10), 
+    labels = scales::label_number(suffix = "%"), 
+    limits = c(0, 50), 
+    expand = c(0, 0)
+  ) +
+  coord_cartesian(clip = "off") +
+  labs(x = "Poverty Rate (%)", 
+       y = "Median Household Income",
+       title = "Scatter Plot of Poverty Rate vs. Median Household Income"
+      )
+```
+
+
+## scatter plots
+
+```{r}
+knitr::include_graphics("plot/population_change_scatter.png")
+```
+
+- 
+  - (a) Scatter plot of population change against the population before the change. 
+  - (b) A scatter plot of the same data but where the population size has beenlog-transformed.
+  - What can we infer from these plots?
+  - Why log transformation is important?
+
+::: {.notes}
+1. (a) The untransformed plot shows extreme compression - nearly all counties are squeezed into the left side near 0. This makes it impossible to see patterns or relationships for the vast majority of counties
+
+2. The log₁₀ transformation spreads out the data points across the entire plot. Now we can clearly see the relationship between population and population change for ALL counties
+
+3. Large counties tend to have stable, modest population changes (clustered around 0%). Small to medium counties show much wider variation (both growth and decline)
+
+4. Why log transformation is important? It helps to reveal patterns in data that span several orders of magnitude, making it easier to analyze and interpret relationships that would otherwise be obscured.
+:::
+
+## scatter plots: R codes
+
+```{.r}
+p_231 <- 
+  county |> 
+  mutate(pop2017 = pop2017 / 1e6) |> 
+  ggplot(aes(pop2017, pop_change)) +
+  geom_point(
+    color = "#377eb8", 
+    size = 3, 
+    alpha = 0.7
+  ) +
+  scale_x_continuous(
+    breaks = seq(0, 10, 2), 
+    limits = c(0, 10), 
+    expand = c(0, 0), 
+    labels = scales::label_number(suffix = "m")
+  ) +
+  scale_y_continuous(
+    labels = scales::label_number(suffix = "%")
+  ) +
+  coord_cartesian(clip = "off") +
+  labs(x = "(a) Population before change (m = millions)", 
+       y = "Population Change (%)") +
+  plot_theme
+
+p_232 <- 
+  county |> 
+  mutate(pop2017 = pop2017 / 1e6) |> 
+  ggplot(aes(pop2017, pop_change)) +
+  geom_point(
+    color = "#377eb8", 
+    size = 3, 
+    alpha = 0.7
+  ) +
+  scale_y_continuous(labels = scales::label_number(suffix = "%")) +
+  scale_x_log10() +
+  coord_cartesian(clip = "off") +
+  labs(x = TeX("(b) $\\log_{10}$ Population before change (m = millions)"), 
+       y = "Population Change (%)") +
+  plot_theme
+
+p_c_233 <- p_231 + p_232 + plot_layout(ncol = 2)
+```
+
+
+## dot plots
+
+```{r}
+knitr::include_graphics("plot/interest_rate_dotplot.png")
+```
+
+- 
+  - A dot plot is a one-variable scatterplot; an example
+ using the interest rate of 50 loans above.
+  - Sometimes two variables are one too many: only one variable may be of interest.
+
+## dot plots: R codes
+
+```{.r}
+loan50 |>
+  ggplot(aes(x = interest_rate)) +
+  geom_dotplot(
+    binwidth = 1, 
+    method = "histodot",
+    fill = "#5A9BD5", 
+    color = "#5A9BD5",
+    dotsize = 0.8,
+    stackratio = 1.2
+  ) +
+  geom_point(
+    aes(y = -0.05, x = mean(loan50$interest_rate)),
+    color = "red",
+    size = 4,
+    shape = 17,
+    fill = "red",
+    stroke = 5
+  ) +
+  geom_hline(yintercept = 0, color = "gray60") +
+  scale_y_continuous(NULL, breaks = NULL) +
+  scale_x_continuous(
+    breaks = seq(5, 30, 5),
+    labels = scales::percent_format(scale = 1),
+    limits = c(5, 30)
+  ) +
+  coord_cartesian(ylim = c(-0.05, 1), clip = "off") +
+  labs(x = "Interest Rate, Rounded to Nearest Percent") 
+```
+
+## histogram and shapes
+
+
+
+# Lesson 2: Centrality and variability
 
 ## Centrality (aka the "Average" value)
 
@@ -126,9 +334,7 @@ A single number representing the *middle* of a set of numbers
 -   **Mode**: Most frequent value (usually for categorical data)
 :::
 
-
-
-## Centrality (aka the "average" value)
+## Centrality (aka the "Average" value)
 
 ### Mean is not the always "best" choice
 
@@ -145,8 +351,6 @@ wildlife_impacts %>%
       mean = mean(height),
       median = median(height))
 ```
-
-<br>
 
 Percent of data below mean:
 
@@ -178,12 +382,9 @@ knitr::include_graphics("plot/wildlife_impacts_hist.png")
 
 ## Variability ("spread")
 
--
-  -   Complaints are coming in about orders shipped from warehouse B, so you collect some data.
+-   Complaints are coming in about orders shipped from warehouse B, so you collect some data.
 
-<br>
-
-  -   ... here **averages** are misleading
+-   ... here **averages** are misleading
 
 ::::: columns
 ::: {.column width="50%"}
@@ -216,14 +417,10 @@ days_to_ship |>
 
 ## Variability ("spread")
 
--
-  -   Complaints are coming in about orders shipped from warehouse B, so you collect some data:
-  
-<br>
+::::: columns
+-   Complaints are coming in about orders shipped from warehouse B, so you collect some data:
 
 -   **variability** reveals difference in days to ship
-
-::::: columns
 
 ::: {.column width="50%"}
 ```{r}
@@ -282,14 +479,13 @@ knitr::include_graphics("plot/days_to_ship.png")
 data1 <- c(3,3,4,5,5,6,6,7,8,9)
 ```
 
--
-  -   Mean: `r round(mean(data1), 2)`
-  
-  -   Standard deviation: `r round(sd(data1), 2)`
-  
-  -   Median: `r median(data1)`
-  
-  -   IQR: `r IQR(data1)`
+-   Mean: `r round(mean(data1), 2)`
+
+-   Standard deviation: `r round(sd(data1), 2)`
+
+-   Median: `r median(data1)`
+
+-   IQR: `r IQR(data1)`
 :::
 
 ::: {.column width="50%"}
@@ -298,14 +494,13 @@ data1 <- c(3,3,4,5,5,6,6,7,8,9)
 data2 <- c(3,3,4,5,5,6,6,7,8,20)
 ```
 
--
-  -   Mean: `r mean(data2)`
-  
-  -   Standard deviation: `r round(sd(data2), 2)`
-  
-  -   Median: `r median(data2)`
-  
-  -   IQR: `r IQR(data2)`\
+-   Mean: `r mean(data2)`
+
+-   Standard deviation: `r round(sd(data2), 2)`
+
+-   Median: `r median(data2)`
+
+-   IQR: `r IQR(data2)`\
 :::
 :::::
 
@@ -319,130 +514,13 @@ data2 <- c(3,3,4,5,5,6,6,7,8,20)
 Source: [Data Science Discovery](https://discovery.cs.illinois.edu/learn/Exploratory-Data-Analysis/Quartiles-and-Box-Plots/)
 :::
 
-
-
 ## Outliers
 
 Robust statistics for continuous data (less sensitive to outliers)
 
--
-  -   **Centrality**: use *median* rather than *mean*
-  
-  -   **Variability**: use *IQR* rather than *standard deviation*
+-   **Centrality**: use *median* rather than *mean*
 
-
-
-## Descriptive statistics table
-
-```{r}
-#| echo: true
-
-library(vtable)
-
-st(gapminder::gapminder |> select(-country, -continent, -year))
-
-
-```
-
-
-## Descriptive statistics table
-
-```{r}
-#| echo: true
-library(frontier)
-data(riceProdPhil)
-
-st(riceProdPhil |> select(PROD:EDYRS))
-```
-
-
-
-## Which of the following measures is used to represent the central tendency of a dataset? {.quiz-question}
-
--   [Mean]{.correct data-explanation="The mean is a measure of central tendency that represents the average value of a dataset. It is calculated by summing all the values and dividing by the number of values."}
-
--   Variance
-
--   Range
-
--   Standard deviation
-
-
-
-## What does the term 'variability' in descriptive statistics refer to? {.quiz-question}
-
-- [The spread of data values]{.correct data-explanation="Correct! Variability refers to how spread out the data values are. It includes measures such as range, variance, and standard deviation, which describe the dispersion of data points."}
-
-- The average value of the data
-
-- The number of data points
-
-- The typde of data collected
-
-
-
-## Which visualization tool is most useful for identifying outliers in a dataset? {.quiz-question}
-
-- Pie chart
-
-- Histogram
-
-- [Boxplot]{.correct data-explanation="Correct! A boxplot is particularly useful for identifying outliers. It displays the median, quartiles, and potential outliers as points outside the whiskers of the plot."}
-
-- Line graph
-
-
-
-## Which of the following statements about the mean and median is always true for a perfectly symmetric distribution? {.quiz-question}
-
-- Mean is greater than median
-
-- [Mean equals median]{.correct data-explanation="Correct! In a perfectly symmetric distribution, the mean, median, and mode all coincide."}
-
-- Median is greater than mode
-
-- Mean equals mode
-
-
-
-## If a dataset has a high standard deviation but a low interquartile range (IQR), what does this suggest? {.quiz-question}
-
-- The data is uniformly distributed
-
-- [There are likely outliers]{.correct data-explanation="Correct! A high standard deviation with a low IQR suggests that most data is clustered but a few extreme values are pulling the standard deviation upward."}
-
-- The data is normally distributed
-
-- The mean is unreliable
-
-
-
-## Which measure is most robust to outliers? {.quiz-question}
-
-- Mean
-
-- Range
-
-- [Median]{.correct data-explanation="Correct! The median is resistant to outliers because it depends only on the middle value(s), not the magnitude of extremes."}
-
-- standard deviation
-
-
-
-## Which of the following is a misleading use of descriptive statistics? {.quiz-question}
-
-- [Reporting the mean income in a highly skewed distribution.]{.correct data-explanation="Correct! In skewed distributions (like income), the mean can be distorted by extreme values and may not reflect the typical case."}
-
-- Using the median to describe symmetric data.
-
-- Reporting both mean and standard deviation for normal data.
-
-- Using IQR to describe variability in ordinal data.
-
-
-    
-# EDA using data viz
-
+-   **Variability**: use *IQR* rather than *standard deviation*
 
 ## "Visualizing data helps us think"
 
@@ -498,10 +576,6 @@ knitr::include_graphics("plot/p_corr_anscombe.png")
 | -   Bars              | -   Bars             | -   Histogram                      |
 |                       |                      | -   Boxplot                        |
 +-----------------------+----------------------+------------------------------------+
-
-## Summarizing categorical data
-
-## Summarizing numerical data
 
 ## Summarizing Nominal data
 
@@ -626,7 +700,7 @@ ggplot(wildlife_impacts) +
 :::
 :::::
 
-## Histogram: Identify Skewness & of Modes
+## Histogram: Identify Skewness & \# of Modes
 
 ::::: columns
 ::: {.column width="50%"}
@@ -695,121 +769,3 @@ ggplot(wildlife_impacts) +
 ```
 :::
 :::::
-
-# Presenting data using data visualization
-
-## Data visualization
-
-> The simple graph has brought more information to the data analyst’s mind than any other device. — John Tukey
-
--   
-
-    -   data visualization is a key part of EDA
-    -   data visualization is the creation and study of the visual representation of data
-    -   Several tools are available for visualizing data - **R** is one of them
-
-## Data reproducibility and replicability
-
-<br>
-
-::::: columns
-::: column
-### Reproducibility {.center-text}
-
--   Obtaining computational results using the same input data, computational steps, methods, code and conditions of analysis.
-:::
-
-::: column
-### Replicability {.center-text}
-
--   Obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.
-:::
-:::::
-
-<br>
-
-::: {.source-text-smaller .center-text}
-[Source: National Academies of Sciences, Engineering, and Medicine. 2019. Reproducibility and Replicability in Science. Washington, DC: The National Academy Press, https://doi.org/10.17226/25303](https://doi.org/10.17226/25303)
-:::
-
-## Data reproducibility and replicability
-
-<br>
-
-::::: columns
-::: column
-### Reproducibility {.center-text}
-
--   
-
-    -   same procedures
-    -   same data
-    -   same code
-:::
-
-::: column
-### Replicability {.center-text}
-
--   
-
-    -   same procedures
-    -   new data
-    -   new code
-:::
-:::::
-
-## Data reproducibility and replicability
-
-![](plot/reproduce-replicate-issue.png){fig-align="center" width="50%" height="50%"}
-
-::: {.source-text-smaller .center-text}
-[Source: Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), Article 7604. https://doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
-:::
-
-## Data reproducibility and replicability
-
-![](plot/rep-rep-bar.png){fig-align="center" width="105%" height="105%"}
-
-::: {.source-text-smaller .center-text}
-[Source: Baker, M. (2016). 1,500 scientists lift the lid on reproducibility. Nature, 533(7604), Article 7604. https://doi.org/10.1038/533452a](https://doi.org/10.1038/533452a)
-:::
-
-## Data exploration vs. data presentation
-
-<br>
-
-+----------------------+----------------------------+------------------------------------+
-| Aspect               | Data exploration           | Data presentation                  |
-+======================+============================+====================================+
-| Goal                 | Discover insights          | Communicate findings               |
-+----------------------+----------------------------+------------------------------------+
-| Priority             | Speed and flexibility      | Visual polish and clarity          |
-+----------------------+----------------------------+------------------------------------+
-| Acceptable output    | Rough, quick plots         | Refined, publication-ready figures |
-+----------------------+----------------------------+------------------------------------+
-| Tool preference      | Dynamic, exploratory tools | Designed-focus hybrid tools        |
-+----------------------+----------------------------+------------------------------------+
-| Reproducibility risk | Low concern                | High concern-avoid manual edits    |
-+----------------------+----------------------------+------------------------------------+
-
-::: {.source-text-smaller .center-text}
-[Source: Wilke, C. (2020). Fundamentals of data visualization. A primer on making informative and compelling figures.](https://clauswilke.com/dataviz/index.html)
-:::
-
-## Separation of content and design
-
-<br>
-
-+-----------------------+-----------------------------------+-----------------------------------------+
-| Component             | Content                           | Design                                  |
-+=======================+===================================+=========================================+
-| Focus                 | Data, transformation, plot types  | Aesthetics, layout, visual polish       |
-+-----------------------+-----------------------------------+-----------------------------------------+
-| Examples              | Scatter plot of unemployment data | Font style, background color, gridlines |
-+-----------------------+-----------------------------------+-----------------------------------------+
-| Tools                 | Data mapping functions            | Themes, style sheets                    |
-+-----------------------+-----------------------------------+-----------------------------------------+
-| Benefit               | Analytical clarity                | Visual consistency and appeal           |
-+-----------------------+-----------------------------------+-----------------------------------------+
-
-## 
