@@ -1,7 +1,7 @@
 ---
 title: ". "
 title-slide-attributes:
-  data-background-image: "plot/module-8-title-page.png"
+  data-background-image: "plot/reg-analysis-title-page.png"
   data-background-size: "cover"
 format: 
   revealjs:
@@ -11,7 +11,7 @@ format:
     code-summary: "code"
     chalkboard: true
     slide-number: true
-    footer: "Econ 148: Analytical and statistical packages for economics"
+    footer: "Econ 115a: Econometrics"
     quiz:
       defaultCorrect: "Correct!"
       defaultIncorrect: "Incorrect!"
@@ -33,7 +33,7 @@ knitr::opts_chunk$set(comment = "",
                       )
 
 ## working directory
-setwd(here::here("module-08-regression"))
+setwd(here::here("m6-regression"))
 
 ## Libraries
 library(tidyverse)
@@ -132,35 +132,33 @@ $$
 knitr::include_graphics("plot/simle-linear-reg.png")
 ```
 
+## Deriving the Ordinary Least Squares (OLS) estimators
+
+-   In order to estimate the regression model one needs data
+
+-   A random sample of $n$ observations
+
+    -   $(x_1, y_1)$ ← first observation
+    -   $(x_2, y_2)$ ← second observation
+    -   $(x_3, y_3)$ ← third observation
+    -   ...
+    -   $(x_n, y_n)$ ← nth observation
 
 ## Deriving the Ordinary Least Squares (OLS) estimators
 
-- In order to estimate the regression model one needs data
-- A random sample of $n$ observations
-
-  - $(x_1, y_1)$ ← first observation
-  - $(x_2, y_2)$ ← second observation
-  - $(x_3, y_3)$ ← third observation
-  - ...
-  - $(x_n, y_n)$ ← nth observation
-
-
-## Deriving the Ordinary Least Squares (OLS) estimators
-
-- Defining regression residuals
-  - $\hat{u_i} = y_i - \hat{y_i} = y_i - (\hat{\beta_0} + \hat{\beta_1}x_i)$
+-   Defining regression residuals
+    -   $\hat{u_i} = y_i - \hat{y_i} = y_i - (\hat{\beta_0} + \hat{\beta_1}x_i)$
 
 <br>
 
-- Minimize the sum of squared residuals (SSR)
-  - $\text{min} \Sigma_{i=1}^n \hat{u_i}^2$ → $\hat{\beta_0}, \hat{\beta_1}$
+-   Minimize the sum of squared residuals (SSR)
+    -   $\text{min} \Sigma_{i=1}^n \hat{u_i}^2$ → $\hat{\beta_0}, \hat{\beta_1}$
 
 <br>
 
-- OLS estimator
-  - $\hat{\beta_1} = \frac{Cov(X,Y)}{Var(X)} = \frac{\Sigma_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\Sigma_{i=1}^n (x_i - \bar{x})^2}$
-  - $\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}$
-
+-   OLS estimator
+    -   $\hat{\beta_1} = \frac{Cov(X,Y)}{Var(X)} = \frac{\Sigma_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\Sigma_{i=1}^n (x_i - \bar{x})^2}$
+    -   $\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}$
 
 ## Simple linear regression model
 
@@ -174,16 +172,13 @@ knitr::include_graphics("plot/OLS fit.png")
 Source: Wooldridge, J. M. (2020). Introductory Econometrics: A Modern Approach (7th ed.). Cengage Learning.
 :::
 
-
 ## Simple regression model
 
-- Wage and education
-  - $wage = \beta_0 + \beta_1 educ + u$
-
-- fitted regression
-  - $\hat{wage} = -0.90 + 0.54 educ$
-  - Interpretation: in the sample, one more year of education was associated with an increase in hourly wage by $0.54.
-
+-   Wage and education
+    -   $wage = \beta_0 + \beta_1 educ + u$
+-   fitted regression
+    -   $\hat{wage} = -0.90 + 0.54 educ$
+    -   Interpretation: in the sample, one more year of education was associated with an increase in hourly wage by \$0.54.
 
 ```{r}
 #| echo: true
@@ -195,9 +190,6 @@ wage_dta <- wooldridge::wage1
 model <- lm(wage ~ educ, data = wage_dta)
 broom::tidy(model)
 ```
-
-
-
 
 ## Simple linear regression
 
@@ -291,9 +283,6 @@ Step 3: Interpret results
     -   example: a 1 unit increase in price decreases the pie sales by 24.03 pies per week.
 :::
 :::::
-
-
-
 
 ## Multiple linear regression
 
@@ -491,7 +480,6 @@ effect_plot(model, pred = Advertising, plot.points = TRUE, jitter = 0.5, interva
 :::
 :::::
 
-
 ## Multiple linear regression
 
 ```{r}
@@ -506,9 +494,6 @@ df |>
   geom_point(size = 2) +
   geom_smooth(method = "lm", se = TRUE)
 ```
-
-
-
 
 # Check-up quiz
 
