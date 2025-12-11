@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <title>.</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-cc885e3d596f9c6452116ff1e70b4214.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-quiz/quiz.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="plot/econ148-title-page.png" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">.</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="correlation-analysis" class="title-slide slide level1 center">
+<h1>Correlation Analysis</h1>
+
+</section>
+<section id="correlation" class="slide level2">
+<h2>Correlation</h2>
+<ul>
+<li><ul>
+<li><p>Is a measure of association between two quantitative variables.</p></li>
+<li><p>A way to measure the extent to which two variables are related.</p></li>
+<li><p>Purpose is to measure the strength and direction of the relationship between two variables.</p></li>
+<li><p>It takes values between -1 (perfect negative) and +1 (perfect positive).</p></li>
+<li><p>A correlation of 0 indicates no relationship between the variables.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="correlation-1" class="slide level2">
+<h2>Correlation</h2>
+<p><br></p>
+
+<img data-src="https://images.wondershare.com/edrawmax/articles2024/scatter-graph-correlation/scatter-graph-correlation-01.jpg" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://edrawmax.wondershare.com/graphs-and-charts-tips/scatter-graph-correlation.html">edrawmax.wondershare.com</a></p></section>
+<section id="measuring-relationships" class="slide level2">
+<h2>Measuring relationships</h2>
+<ul>
+<li><ul>
+<li><p>We need to see whether one variable increases, the other increases, decreases or stay the same</p></li>
+<li><p>Can be done by calculating the covariance</p></li>
+</ul></li>
+</ul>
+<div style="font-size: 2.0em;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Sample data: Adverts watched and toffee purchases</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>data_sample</span>
+<span id="cb1-2"><a href=""></a>  Person Adverts Packets</span>
+<span id="cb1-3"><a href=""></a><span class="dv">1</span>      <span class="dv">1</span>       <span class="dv">5</span>       <span class="dv">8</span></span>
+<span id="cb1-4"><a href=""></a><span class="dv">2</span>      <span class="dv">2</span>       <span class="dv">4</span>       <span class="dv">9</span></span>
+<span id="cb1-5"><a href=""></a><span class="dv">3</span>      <span class="dv">3</span>       <span class="dv">4</span>      <span class="dv">10</span></span>
+<span id="cb1-6"><a href=""></a><span class="dv">4</span>      <span class="dv">4</span>       <span class="dv">6</span>      <span class="dv">13</span></span>
+<span id="cb1-7"><a href=""></a><span class="dv">5</span>      <span class="dv">5</span>       <span class="dv">8</span>      <span class="dv">15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="measuring-relationship" class="slide level2">
+<h2>Measuring relationship</h2>
+<ul>
+<li><ul>
+<li>Adverts watched and toffee purchases</li>
+</ul></li>
+</ul>
+
+<img data-src="plot/plot-measuring-relationship-covariance.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="head" class="title-slide slide level1 center">
+<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h1>
+
+</section>
+<section id="guessing-the-correlation" class="slide level2">
+<h2>Guessing the correlation</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>67b17b9d055190c7c92a22d9ec9698743d82130e ## Variance</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li><ul>
+<li>variance tell us by how much scores deviates from the mean for a single variable.</li>
+<li>it is closely linked to the sum of squares</li>
+<li>covariance is similar - it tells us by how much scores on two variables differ from their respective means.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\text{variance} = \frac{\Sigma(x_i - \bar{x})^2}{N-1} = \frac{\Sigma(x_i - \bar{x}) (x_i - \bar{x})}{N-1}
+\]</span></p>
+</section>
+<section id="covariance" class="slide level2">
+<h2>Covariance</h2>
+<ul>
+<li><ul>
+<li>calculate the error between the mean and each subject’s score for the first variable (<span class="math inline">\(X\)</span>).</li>
+<li>calculate the error between the mean and their score for the second variable (<span class="math inline">\(y\)</span>)</li>
+<li>multiply these error values</li>
+<li>add these values and you get the cross product deviations</li>
+<li>the covariance is the average cross-product deviation.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\text{cov(x, y)} = \frac{\Sigma(x_i - \bar{x}) (y_i - \bar{y})}{N-1}
+\]</span></p>
+</section>
+<section id="problems-with-covariance" class="slide level2">
+<h2>Problems with covariance</h2>
+<ul>
+<li><ul>
+<li>It depends upon the units of measurement
+<ul>
+<li>e.g., the covariance of two variables measured in miles might be 4.25, but if the same scores are converted to kilometers, the covariance is 11.</li>
+</ul></li>
+<li>One solution: standardized it!
+<ul>
+<li>divide the standard deviations of both variable</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="correlation-2" class="slide level2">
+<h2>Correlation</h2>
+<ul>
+<li><ul>
+<li>the standardized version of covariance is known as the correlatino coefficient.</li>
+<li>it is relatively unaffected by units of measurement.</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+\text{cov(x, y)} = \frac{cov_{xy}}{s_x s_y} =\frac{\Sigma(x_i - \bar{x}) (y_i - \bar{y})}{(N-1) s_x s_y}
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+r = \frac{\Sigma{xy} - \frac{(\Sigma{x}) (\Sigma{y})}{n}}{\sqrt{[\Sigma x^2 - \frac{(\Sigma x)^2}{n}][\Sigma x^2 - \frac{(\Sigma y)^2}{n}]}}
+\]</span></p>
+</section>
+<section id="correlation-coefficient-interpretation" class="slide level2">
+<h2>Correlation coefficient interpretation</h2>
+<table class="caption-top" style="width:98%;">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Correlation coefficient</th>
+<th style="text-align: center;">Psychology</th>
+<th style="text-align: center;">Politics and economics</th>
+<th style="text-align: center;">Medicine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">± 1.0</td>
+<td style="text-align: center;">Perfect</td>
+<td style="text-align: center;">Perfect</td>
+<td style="text-align: center;">Perfect</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">± 0.9</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Very strong</td>
+<td style="text-align: center;">Very strong</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">± 0.8</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Very strong</td>
+<td style="text-align: center;">Very strong</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">± 0.7</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Very strong</td>
+<td style="text-align: center;">Moderate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">± 0.6</td>
+<td style="text-align: center;">Moderate</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Moderate</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">± 0.5</td>
+<td style="text-align: center;">Moderate</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Fair</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">± 0.4</td>
+<td style="text-align: center;">Moderate</td>
+<td style="text-align: center;">Strong</td>
+<td style="text-align: center;">Fair</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">± 0.3</td>
+<td style="text-align: center;">Weak</td>
+<td style="text-align: center;">Moderate</td>
+<td style="text-align: center;">Fair</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">± 0.2</td>
+<td style="text-align: center;">Weak</td>
+<td style="text-align: center;">Weak</td>
+<td style="text-align: center;">Poor</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">± 0.1</td>
+<td style="text-align: center;">Weak</td>
+<td style="text-align: center;">Negligible</td>
+<td style="text-align: center;">Poor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">± 0.0</td>
+<td style="text-align: center;">Zero</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+</tr>
+</tbody>
+</table>
+
+<aside><div>
+<p>Source: Akoglu, H. (2018). User’s guide to correlation coefficients. Turkish Journal of Emergency Medicine, 18(3), 91–93. https://doi.org/10.1016/j.tjem.2018.08.001</p>
+</div></aside></section>
+<section id="correlation-3" class="slide level2">
+<h2>Correlation</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><strong>sample dataset</strong></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>sample_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href=""></a>  <span class="at">subject =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb2-3"><a href=""></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">12</span>, <span class="dv">3</span>),</span>
+<span id="cb2-4"><a href=""></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb2-5"><a href=""></a>)</span>
+<span id="cb2-6"><a href=""></a></span>
+<span id="cb2-7"><a href=""></a>sample_data</span>
+<span id="cb2-8"><a href=""></a><span class="co"># A tibble: 5 × 3</span></span>
+<span id="cb2-9"><a href=""></a>  subject     x     y</span>
+<span id="cb2-10"><a href=""></a>    <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb2-11"><a href=""></a><span class="dv">1</span>       <span class="dv">1</span>    <span class="dv">20</span>     <span class="dv">7</span></span>
+<span id="cb2-12"><a href=""></a><span class="dv">2</span>       <span class="dv">2</span>     <span class="dv">0</span>     <span class="dv">0</span></span>
+<span id="cb2-13"><a href=""></a><span class="dv">3</span>       <span class="dv">3</span>     <span class="dv">1</span>     <span class="dv">2</span></span>
+<span id="cb2-14"><a href=""></a><span class="dv">4</span>       <span class="dv">4</span>    <span class="dv">12</span>     <span class="dv">5</span></span>
+<span id="cb2-15"><a href=""></a><span class="dv">5</span>       <span class="dv">5</span>     <span class="dv">3</span>     <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<ul>
+<li><strong>manual calculations</strong></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>sample_comp_data <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a href=""></a>  sample_data <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a href=""></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-4"><a href=""></a>    <span class="at">sum_x =</span> <span class="fu">sum</span>(x),</span>
+<span id="cb3-5"><a href=""></a>    <span class="at">sum_y =</span> <span class="fu">sum</span>(y),</span>
+<span id="cb3-6"><a href=""></a>    <span class="at">sum_x2 =</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb3-7"><a href=""></a>    <span class="at">sum_y2 =</span> <span class="fu">sum</span>(y<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb3-8"><a href=""></a>    <span class="at">sum_xy =</span> <span class="fu">sum</span>(x <span class="sc">*</span> y),</span>
+<span id="cb3-9"><a href=""></a>  )</span>
+<span id="cb3-10"><a href=""></a></span>
+<span id="cb3-11"><a href=""></a>sample_comp_data</span>
+<span id="cb3-12"><a href=""></a><span class="co"># A tibble: 1 × 5</span></span>
+<span id="cb3-13"><a href=""></a>  sum_x sum_y sum_x2 sum_y2 sum_xy</span>
+<span id="cb3-14"><a href=""></a>  <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span>  <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb3-15"><a href=""></a><span class="dv">1</span>    <span class="dv">36</span>    <span class="dv">17</span>    <span class="dv">554</span>     <span class="dv">87</span>    <span class="dv">211</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>r <span class="ot">&lt;-</span> <span class="fu">with</span>(sample_comp_data,</span>
+<span id="cb4-2"><a href=""></a>          (sum_xy <span class="sc">-</span> (sum_x <span class="sc">*</span> sum_y) <span class="sc">/</span> <span class="fu">nrow</span>(sample_data)) <span class="sc">/</span></span>
+<span id="cb4-3"><a href=""></a>            <span class="fu">sqrt</span>((sum_x2 <span class="sc">-</span> (sum_x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">nrow</span>(sample_data)) <span class="sc">*</span></span>
+<span id="cb4-4"><a href=""></a>                   (sum_y2 <span class="sc">-</span> (sum_y<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">nrow</span>(sample_data)))</span>
+<span id="cb4-5"><a href=""></a>)</span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a>r</span>
+<span id="cb4-8"><a href=""></a>[<span class="dv">1</span>] <span class="fl">0.9549454</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="correlation-4" class="slide level2">
+<h2>Correlation</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><strong>sample dataset</strong></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>sample_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb5-2"><a href=""></a>  <span class="at">subject =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb5-3"><a href=""></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">12</span>, <span class="dv">3</span>),</span>
+<span id="cb5-4"><a href=""></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb5-5"><a href=""></a>)</span>
+<span id="cb5-6"><a href=""></a></span>
+<span id="cb5-7"><a href=""></a>sample_data</span>
+<span id="cb5-8"><a href=""></a><span class="co"># A tibble: 5 × 3</span></span>
+<span id="cb5-9"><a href=""></a>  subject     x     y</span>
+<span id="cb5-10"><a href=""></a>    <span class="sc">&lt;</span>int<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb5-11"><a href=""></a><span class="dv">1</span>       <span class="dv">1</span>    <span class="dv">20</span>     <span class="dv">7</span></span>
+<span id="cb5-12"><a href=""></a><span class="dv">2</span>       <span class="dv">2</span>     <span class="dv">0</span>     <span class="dv">0</span></span>
+<span id="cb5-13"><a href=""></a><span class="dv">3</span>       <span class="dv">3</span>     <span class="dv">1</span>     <span class="dv">2</span></span>
+<span id="cb5-14"><a href=""></a><span class="dv">4</span>       <span class="dv">4</span>    <span class="dv">12</span>     <span class="dv">5</span></span>
+<span id="cb5-15"><a href=""></a><span class="dv">5</span>       <span class="dv">5</span>     <span class="dv">3</span>     <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column">
+<ul>
+<li><strong>using R function</strong></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="do">## correlation test</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">cor.test</span>(sample_data<span class="sc">$</span>x, sample_data<span class="sc">$</span>y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb6-3"><a href=""></a></span>
+<span id="cb6-4"><a href=""></a>    Pearson<span class="st">'s product-moment correlation</span></span>
+<span id="cb6-5"><a href=""></a></span>
+<span id="cb6-6"><a href=""></a><span class="st">data:  sample_data$x and sample_data$y</span></span>
+<span id="cb6-7"><a href=""></a><span class="st">t = 5.5732, df = 3, p-value = 0.0114</span></span>
+<span id="cb6-8"><a href=""></a><span class="st">alternative hypothesis: true correlation is not equal to 0</span></span>
+<span id="cb6-9"><a href=""></a><span class="st">95 percent confidence interval:</span></span>
+<span id="cb6-10"><a href=""></a><span class="st"> 0.4615018 0.9971211</span></span>
+<span id="cb6-11"><a href=""></a><span class="st">sample estimates:</span></span>
+<span id="cb6-12"><a href=""></a><span class="st">      cor </span></span>
+<span id="cb6-13"><a href=""></a><span class="st">0.9549454 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="correlation-5" class="slide level2">
+<h2>Correlation</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href=""></a><span class="co"># Use the built-in 'mtcars' dataset</span></span>
+<span id="cb7-3"><a href=""></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb7-4"><a href=""></a></span>
+<span id="cb7-5"><a href=""></a><span class="co"># Calculate correlation coefficient</span></span>
+<span id="cb7-6"><a href=""></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(data<span class="sc">$</span>mpg, data<span class="sc">$</span>wt)</span>
+<span id="cb7-7"><a href=""></a></span>
+<span id="cb7-8"><a href=""></a><span class="co"># Create scatter plot</span></span>
+<span id="cb7-9"><a href=""></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb7-10"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href=""></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-12"><a href=""></a>    <span class="at">title =</span> <span class="st">"Scatter Plot of Miles Per Gallon vs Car Weight"</span>,</span>
+<span id="cb7-13"><a href=""></a>    <span class="at">x =</span> <span class="st">"Car Weight (1000 lbs)"</span>,</span>
+<span id="cb7-14"><a href=""></a>    <span class="at">y =</span> <span class="st">"Miles Per Gallon (MPG)"</span></span>
+<span id="cb7-15"><a href=""></a>  ) <span class="sc">+</span></span>
+<span id="cb7-16"><a href=""></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb7-17"><a href=""></a>           <span class="at">x =</span> <span class="fu">max</span>(data<span class="sc">$</span>wt) <span class="sc">*</span> <span class="fl">0.7</span>, </span>
+<span id="cb7-18"><a href=""></a>           <span class="at">y =</span> <span class="fu">max</span>(data<span class="sc">$</span>mpg) <span class="sc">*</span> <span class="fl">0.9</span>, </span>
+<span id="cb7-19"><a href=""></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Correlation:"</span>, <span class="fu">round</span>(correlation, <span class="dv">2</span>)),</span>
+<span id="cb7-20"><a href=""></a>           <span class="at">size =</span> <span class="dv">6</span>,</span>
+<span id="cb7-21"><a href=""></a>           <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb7-22"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-23"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:70%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="correlation-vs-causation" class="slide level2">
+<h2>Correlation vs Causation</h2>
+<ul>
+<li><p>two things that goes together may not necessarily mean that there is causation</p></li>
+<li><p>one variable can be strongly related to another, yet not cause it.</p></li>
+<li><p>Correlation does not imply causality.</p></li>
+</ul>
+<p><br></p>
+
+<img data-src="https://nulib.github.io/moderndive_book/images/causation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="correlation-6" class="slide level2">
+<h2>Correlation</h2>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 21%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Data type</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><ul>
+<li>Pearson</li>
+</ul></td>
+<td><ul>
+<li>Continuous</li>
+<li>Normally distributed</li>
+</ul></td>
+<td><ul>
+<li>both variables are continuous and normally distributed and the relationship is linear</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><ul>
+<li>Spearman</li>
+</ul></td>
+<td><ul>
+<li>Continuous (non-normal)</li>
+<li>Ordinal</li>
+</ul></td>
+<td><ul>
+<li>when data is ordinal, or the relationship is monotonic but not linear</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pearson-correlation" class="slide level2">
+<h2>Pearson correlation</h2>
+<div style="font-size: 2.0em;">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>R activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Test if there is a relationship between mpg and car weight using <code>mtcars</code> dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Step 1: read in data</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb8-2"><a href=""></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb8-3"><a href=""></a>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb</span>
+<span id="cb8-4"><a href=""></a>Mazda RX4         <span class="fl">21.0</span>   <span class="dv">6</span>  <span class="dv">160</span> <span class="dv">110</span> <span class="fl">3.90</span> <span class="fl">2.620</span> <span class="fl">16.46</span>  <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb8-5"><a href=""></a>Mazda RX4 Wag     <span class="fl">21.0</span>   <span class="dv">6</span>  <span class="dv">160</span> <span class="dv">110</span> <span class="fl">3.90</span> <span class="fl">2.875</span> <span class="fl">17.02</span>  <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb8-6"><a href=""></a>Datsun <span class="dv">710</span>        <span class="fl">22.8</span>   <span class="dv">4</span>  <span class="dv">108</span>  <span class="dv">93</span> <span class="fl">3.85</span> <span class="fl">2.320</span> <span class="fl">18.61</span>  <span class="dv">1</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">1</span></span>
+<span id="cb8-7"><a href=""></a>Hornet <span class="dv">4</span> Drive    <span class="fl">21.4</span>   <span class="dv">6</span>  <span class="dv">258</span> <span class="dv">110</span> <span class="fl">3.08</span> <span class="fl">3.215</span> <span class="fl">19.44</span>  <span class="dv">1</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">1</span></span>
+<span id="cb8-8"><a href=""></a>Hornet Sportabout <span class="fl">18.7</span>   <span class="dv">8</span>  <span class="dv">360</span> <span class="dv">175</span> <span class="fl">3.15</span> <span class="fl">3.440</span> <span class="fl">17.02</span>  <span class="dv">0</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">2</span></span>
+<span id="cb8-9"><a href=""></a>Valiant           <span class="fl">18.1</span>   <span class="dv">6</span>  <span class="dv">225</span> <span class="dv">105</span> <span class="fl">2.76</span> <span class="fl">3.460</span> <span class="fl">20.22</span>  <span class="dv">1</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Step 2: normality test</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">shapiro.test</span>(mtcars<span class="sc">$</span>wt)</span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a>    Shapiro<span class="sc">-</span>Wilk normality test</span>
+<span id="cb9-4"><a href=""></a></span>
+<span id="cb9-5"><a href=""></a>data<span class="sc">:</span>  mtcars<span class="sc">$</span>wt</span>
+<span id="cb9-6"><a href=""></a>W <span class="ot">=</span> <span class="fl">0.94326</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.09265</span></span>
+<span id="cb9-7"><a href=""></a><span class="fu">shapiro.test</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb9-8"><a href=""></a></span>
+<span id="cb9-9"><a href=""></a>    Shapiro<span class="sc">-</span>Wilk normality test</span>
+<span id="cb9-10"><a href=""></a></span>
+<span id="cb9-11"><a href=""></a>data<span class="sc">:</span>  mtcars<span class="sc">$</span>mpg</span>
+<span id="cb9-12"><a href=""></a>W <span class="ot">=</span> <span class="fl">0.94756</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.1229</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="pearson-correlation-1" class="slide level2">
+<h2>Pearson correlation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Step 3: Create scatterplot</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(wt, mpg)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Step 4: Perform pearson correlation</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>wt, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a>    Pearson<span class="st">'s product-moment correlation</span></span>
+<span id="cb11-4"><a href=""></a></span>
+<span id="cb11-5"><a href=""></a><span class="st">data:  mtcars$mpg and mtcars$wt</span></span>
+<span id="cb11-6"><a href=""></a><span class="st">t = -9.559, df = 30, p-value = 1.294e-10</span></span>
+<span id="cb11-7"><a href=""></a><span class="st">alternative hypothesis: true correlation is not equal to 0</span></span>
+<span id="cb11-8"><a href=""></a><span class="st">95 percent confidence interval:</span></span>
+<span id="cb11-9"><a href=""></a><span class="st"> -0.9338264 -0.7440872</span></span>
+<span id="cb11-10"><a href=""></a><span class="st">sample estimates:</span></span>
+<span id="cb11-11"><a href=""></a><span class="st">       cor </span></span>
+<span id="cb11-12"><a href=""></a><span class="st">-0.8676594 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="spearman-correlation" class="slide level2">
+<h2>Spearman correlation</h2>
+<div style="font-size: 2.0em;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>R activity</strong></p>
+</div>
+<div class="callout-content">
+<p>Test if there is a relationship between mpg and car horse power using <code>mtcars</code> dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Step 1: read in data</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb12-2"><a href=""></a><span class="fu">head</span>(mtcars)</span>
+<span id="cb12-3"><a href=""></a>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb</span>
+<span id="cb12-4"><a href=""></a>Mazda RX4         <span class="fl">21.0</span>   <span class="dv">6</span>  <span class="dv">160</span> <span class="dv">110</span> <span class="fl">3.90</span> <span class="fl">2.620</span> <span class="fl">16.46</span>  <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb12-5"><a href=""></a>Mazda RX4 Wag     <span class="fl">21.0</span>   <span class="dv">6</span>  <span class="dv">160</span> <span class="dv">110</span> <span class="fl">3.90</span> <span class="fl">2.875</span> <span class="fl">17.02</span>  <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb12-6"><a href=""></a>Datsun <span class="dv">710</span>        <span class="fl">22.8</span>   <span class="dv">4</span>  <span class="dv">108</span>  <span class="dv">93</span> <span class="fl">3.85</span> <span class="fl">2.320</span> <span class="fl">18.61</span>  <span class="dv">1</span>  <span class="dv">1</span>    <span class="dv">4</span>    <span class="dv">1</span></span>
+<span id="cb12-7"><a href=""></a>Hornet <span class="dv">4</span> Drive    <span class="fl">21.4</span>   <span class="dv">6</span>  <span class="dv">258</span> <span class="dv">110</span> <span class="fl">3.08</span> <span class="fl">3.215</span> <span class="fl">19.44</span>  <span class="dv">1</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">1</span></span>
+<span id="cb12-8"><a href=""></a>Hornet Sportabout <span class="fl">18.7</span>   <span class="dv">8</span>  <span class="dv">360</span> <span class="dv">175</span> <span class="fl">3.15</span> <span class="fl">3.440</span> <span class="fl">17.02</span>  <span class="dv">0</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">2</span></span>
+<span id="cb12-9"><a href=""></a>Valiant           <span class="fl">18.1</span>   <span class="dv">6</span>  <span class="dv">225</span> <span class="dv">105</span> <span class="fl">2.76</span> <span class="fl">3.460</span> <span class="fl">20.22</span>  <span class="dv">1</span>  <span class="dv">0</span>    <span class="dv">3</span>    <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Step 2: normality test</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="fu">shapiro.test</span>(mtcars<span class="sc">$</span>hp)</span>
+<span id="cb13-2"><a href=""></a></span>
+<span id="cb13-3"><a href=""></a>    Shapiro<span class="sc">-</span>Wilk normality test</span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a>data<span class="sc">:</span>  mtcars<span class="sc">$</span>hp</span>
+<span id="cb13-6"><a href=""></a>W <span class="ot">=</span> <span class="fl">0.93342</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.04881</span></span>
+<span id="cb13-7"><a href=""></a><span class="fu">shapiro.test</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb13-8"><a href=""></a></span>
+<span id="cb13-9"><a href=""></a>    Shapiro<span class="sc">-</span>Wilk normality test</span>
+<span id="cb13-10"><a href=""></a></span>
+<span id="cb13-11"><a href=""></a>data<span class="sc">:</span>  mtcars<span class="sc">$</span>mpg</span>
+<span id="cb13-12"><a href=""></a>W <span class="ot">=</span> <span class="fl">0.94756</span>, p<span class="sc">-</span>value <span class="ot">=</span> <span class="fl">0.1229</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="spearman-correlation-1" class="slide level2">
+<h2>Spearman correlation</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Step 3: Create scatterplot</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(hp, mpg)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href=""></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Step 4: Perform spearman correlation</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="fu">cor.test</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>wt, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a>    Spearman<span class="st">'s rank correlation rho</span></span>
+<span id="cb15-4"><a href=""></a></span>
+<span id="cb15-5"><a href=""></a><span class="st">data:  mtcars$mpg and mtcars$wt</span></span>
+<span id="cb15-6"><a href=""></a><span class="st">S = 10292, p-value = 1.488e-11</span></span>
+<span id="cb15-7"><a href=""></a><span class="st">alternative hypothesis: true rho is not equal to 0</span></span>
+<span id="cb15-8"><a href=""></a><span class="st">sample estimates:</span></span>
+<span id="cb15-9"><a href=""></a><span class="st">      rho </span></span>
+<span id="cb15-10"><a href=""></a><span class="st">-0.886422 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="check-up-quiz" class="title-slide slide level1 center">
+<h1>Check-up quiz</h1>
+
+</section>
+<section id="what-does-correlation-analysis-aim-to-determine" class="slide level2 quiz-question">
+<h2>What does correlation analysis aim to determine?</h2>
+<ul>
+<li><p>The cause-and-effect relationship between two variables.</p></li>
+<li><p><span class="correct">The strength and direction of the linear relationship between two variables</span></p></li>
+<li><p>The difference in means between two groups.</p></li>
+<li><p>The probability of an event occurring.</p></li>
+</ul>
+</section>
+<section id="which-of-the-following-correlation-coefficients-indicates-the-strongest-relationship" class="slide level2 quiz-question">
+<h2>Which of the following correlation coefficients indicates the strongest relationship?</h2>
+<ul>
+<li><p>0.25</p></li>
+<li><p><span class="correct">-0.70</span></p></li>
+<li><p>0.10</p></li>
+<li><p>0.50</p></li>
+</ul>
+</section>
+<section id="a-correlation-coefficient-of--0.80-suggests" class="slide level2 quiz-question">
+<h2>A correlation coefficient of -0.80 suggests:</h2>
+<ul>
+<li><p>A strong positive relationship.</p></li>
+<li><p>A weak positive relationship.</p></li>
+<li><p><span class="correct">A strong negative relationship</span></p></li>
+<li><p>No relationship.</p></li>
+</ul>
+</section>
+<section id="what-is-the-range-of-values-for-a-correlation-coefficient" class="slide level2 quiz-question">
+<h2>What is the range of values for a correlation coefficient?</h2>
+<ul>
+<li><p>0 to 1</p></li>
+<li><p><span class="correct">-1 to 1</span></p></li>
+<li><p>-∞ to ∞</p></li>
+<li><p>0 to ∞</p></li>
+</ul>
+</section>
+<section id="which-of-the-following-factors-can-influence-the-correlation-coefficient" class="slide level2 quiz-question">
+<h2>Which of the following factors can influence the correlation coefficient?</h2>
+<ul>
+<li><p>Outliers in the data.</p></li>
+<li><p>The units of measurement of the variables.</p></li>
+<li><p>The sample size.</p></li>
+<li><p><span class="correct">All of the above</span></p></li>
+</ul>
+</section></section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+
+<img data-src="plot/econ148-hex-logo.png" class="quarto-figure quarto-figure-center r-stretch">
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Econ 148: Analytical and statistical packages for economics 1</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-quiz/quiz.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'quiz': {"checkKey":"c","resetKey":"q","shuffleKey":"t","allowNumberKeys":true,"disableOnCheck":false,"shuffleOptions":true,"defaultCorrect":"Correct!","defaultIncorrect":"Incorrect!"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealQuiz, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
