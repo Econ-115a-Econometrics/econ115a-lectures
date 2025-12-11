@@ -265,9 +265,6 @@
 </ul>
 
 <img data-src="plot/plot-measuring-relationship-covariance.jpeg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="guessing-the-correlation" class="slide level2">
-<h2>Guessing the correlation</h2>
-</section>
 <section id="variance" class="slide level2">
 <h2>Variance</h2>
 <ul>
@@ -829,6 +826,59 @@ r = \frac{\Sigma{xy} - \frac{(\Sigma{x}) (\Sigma{y})}{n}}{\sqrt{[\Sigma x^2 - \f
 <li><p>The sample size.</p></li>
 <li><p><span class="correct">All of the above</span></p></li>
 </ul>
+</section>
+<section id="correlation-plots" class="slide level2">
+<h2>Correlation plots</h2>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="co">#| echo: true</span></span>
+<span id="cb16-2"><a href=""></a></span>
+<span id="cb16-3"><a href=""></a><span class="do">## load packages</span></span>
+<span id="cb16-4"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-5"><a href=""></a><span class="fu">library</span>(ggcorrplot)</span>
+<span id="cb16-6"><a href=""></a></span>
+<span id="cb16-7"><a href=""></a><span class="do">## importing data</span></span>
+<span id="cb16-8"><a href=""></a><span class="fu">data</span>(SaratogaHouses, <span class="at">package=</span><span class="st">"mosaicData"</span>)</span>
+<span id="cb16-9"><a href=""></a></span>
+<span id="cb16-10"><a href=""></a><span class="co"># select numeric variables</span></span>
+<span id="cb16-11"><a href=""></a>df <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">select_if</span>(SaratogaHouses, is.numeric)</span>
+<span id="cb16-12"><a href=""></a></span>
+<span id="cb16-13"><a href=""></a><span class="co"># calulate the correlations</span></span>
+<span id="cb16-14"><a href=""></a>r <span class="ot">&lt;-</span> <span class="fu">cor</span>(df, <span class="at">use=</span><span class="st">"complete.obs"</span>)</span>
+<span id="cb16-15"><a href=""></a></span>
+<span id="cb16-16"><a href=""></a><span class="co"># plot correlation matrix</span></span>
+<span id="cb16-17"><a href=""></a><span class="fu">ggcorrplot</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="correlation-plots-1" class="slide level2">
+<h2>Correlation plots</h2>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="fu">ggcorrplot</span>(r, </span>
+<span id="cb17-2"><a href=""></a>           <span class="at">hc.order =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb17-3"><a href=""></a>           <span class="at">type =</span> <span class="st">"lower"</span>,</span>
+<span id="cb17-4"><a href=""></a>           <span class="at">lab =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section></section>
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>

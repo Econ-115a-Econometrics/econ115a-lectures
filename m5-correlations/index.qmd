@@ -113,8 +113,6 @@ data_sample
 knitr::include_graphics("plot/plot-measuring-relationship-covariance.jpeg")
 ```
 
-## Guessing the correlation
-
 ## Variance
 
 -   
@@ -539,6 +537,78 @@ cor.test(mtcars$mpg, mtcars$wt, method = "spearman")
 -   The sample size.
 
 -   [All of the above]{.correct}
+
+
+## Correlation plots
+
+::: {.columns}
+::: {.column}
+```{.r}
+#| echo: true
+
+## load packages
+library(ggplot2)
+library(ggcorrplot)
+
+## importing data
+data(SaratogaHouses, package="mosaicData")
+
+# select numeric variables
+df <- dplyr::select_if(SaratogaHouses, is.numeric)
+
+# calulate the correlations
+r <- cor(df, use="complete.obs")
+
+# plot correlation matrix
+ggcorrplot(r)
+```
+
+:::
+::: {.column}
+
+```{r}
+## load packages
+library(ggplot2)
+library(ggcorrplot)
+
+## importing data
+data(SaratogaHouses, package="mosaicData")
+
+# select numeric variables
+df <- dplyr::select_if(SaratogaHouses, is.numeric)
+
+# calulate the correlations
+r <- cor(df, use="complete.obs")
+
+# plot correlation matrix
+ggcorrplot(r)
+```
+:::
+:::
+
+## Correlation plots
+
+::: {.columns}
+::: {.column}
+```{.r}
+ggcorrplot(r, 
+           hc.order = TRUE, 
+           type = "lower",
+           lab = TRUE)
+```
+:::
+::: {.column}
+
+```{r}
+ggcorrplot(r, 
+           hc.order = TRUE, 
+           type = "lower",
+           lab = TRUE)
+```
+:::
+:::
+
+
 
 # 
 
